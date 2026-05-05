@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
           garamond: ["var(--font-eb-garamond)"], 
           cylburn: ["var(--font-cylburn)"],
+          noto: ["var(--font-noto-sans)"],
       },
     },
   },

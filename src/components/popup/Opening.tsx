@@ -29,21 +29,21 @@ export default function Opening({ setStart, namaTamu }: Props) {
         style={{
           backgroundImage: "url('/images/Popup/BgDekstopHD.webp')", // ← ganti path
           backgroundSize: "cover",
-          backgroundPosition: "top",
+          backgroundPosition: "50%_30%",
         }}
       />
 
       {/* ── ORNAMEN — mobile only (lg:hidden) ── */}
       <div className="lg:hidden">
-        <Image src="/images/Wishes/BungaAtas.webp" alt="" width={390} height={300}
+        <Image src="/images/Wishes/BungaAtas.svg" alt="" width={390} height={300}
           className="absolute top-0 left-0 w-full pointer-events-none z-0" />
         <Image src="/images/Wishes/DaunAtas.webp" alt="" width={390} height={300}
           className="absolute top-0 left-0 w-full pointer-events-none z-10" />
         <Image src="/images/Wishes/DaunKanan.webp" alt="" width={390} height={300}
           className="absolute top-0 right-0 w-full pointer-events-none z-10" />
-        <Image src="/images/Wishes/BungaKananBawah.webp" alt="" width={390} height={300}
+        <Image src="/images/Wishes/BungaKanan.svg" alt="" width={390} height={300}
           className="absolute bottom-0 right-0 w-full pointer-events-none z-0" />
-        <Image src="/images/Wishes/BungaKiriBawah.webp" alt="" width={390} height={300}
+        <Image src="/images/Wishes/BungaKiri.svg" alt="" width={390} height={300}
           className="absolute bottom-0 left-0 w-full pointer-events-none z-0" />
         <Image src="/images/Wishes/DaunBawah.webp" alt="" width={390} height={300}
           className="absolute bottom-0 left-0 w-full pointer-events-none z-10" />

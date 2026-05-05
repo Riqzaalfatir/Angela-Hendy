@@ -14,6 +14,13 @@ type Props = {
 
 export default function WeddingGift({ open, onClose }: Props) {
   const [scale, setScale] = useState(1);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+  navigator.clipboard.writeText("8090598253");
+  setCopied(true);
+  setTimeout(() => setCopied(false), 2000);
+};
 
   useEffect(() => {
     const updateScale = () => {
@@ -50,7 +57,7 @@ export default function WeddingGift({ open, onClose }: Props) {
           }}
         >
           {/* ── ORNAMEN ATAS ── */}
-          <Image src="/images/Wishes/BungaAtas.webp" alt="" width={390} height={300} priority
+          <Image src="/images/Wishes/BungaAtas.svg" alt="" width={390} height={300} priority
             className="absolute top-0 left-0 w-full z-0 pointer-events-none" />
           <Image src="/images/Wishes/DaunAtas.webp" alt="" width={390} height={300} priority
             className="absolute top-0 left-0 w-full z-10 pointer-events-none" />
@@ -58,9 +65,9 @@ export default function WeddingGift({ open, onClose }: Props) {
             className="absolute top-0 right-0 w-full z-10 pointer-events-none" />
 
           {/* ── ORNAMEN BAWAH ── */}
-          <Image src="/images/Wishes/BungaKananBawah.webp" alt="" width={390} height={300} priority
+          <Image src="/images/Wishes/BungaKanan.svg" alt="" width={390} height={300} priority
             className="absolute bottom-0 right-0 w-full z-0 pointer-events-none" />
-          <Image src="/images/Wishes/BungaKiriBawah.webp" alt="" width={390} height={300} priority
+          <Image src="/images/Wishes/BungaKiri.svg" alt="" width={390} height={300} priority
             className="absolute bottom-0 left-0 w-full z-0 pointer-events-none" />
           <Image src="/images/Wishes/DaunBawah.webp" alt="" width={390} height={300} priority
             className="absolute bottom-0 left-0 w-full z-10 pointer-events-none" />
@@ -94,10 +101,10 @@ export default function WeddingGift({ open, onClose }: Props) {
                 </p>
               </div>
               <button
-                onClick={() => navigator.clipboard.writeText("8090598253")}
+                onClick={handleCopy}
                 className="border-b border-white leading-none text-white"
                 style={{ fontFamily: "EB Garamond, serif", fontSize: 12 }}>
-                COPY
+                {copied ? "COPIED !" : "COPY"}
               </button>
             </div>
             <div className="border-b border-white mt-[10px]" />

@@ -92,7 +92,7 @@ const [selectedMessage, setSelectedMessage] = useState<WishItem | null>(null);
             }}
           >
             {/* BUNGA & DAUN ATAS */}
-            <Image src="/images/Wishes/BungaAtas.webp" alt="" width={999} height={999} priority
+            <Image src="/images/Wishes/BungaAtas.svg" alt="" width={999} height={999} priority
               className="absolute z-0 w-full pointer-events-none" style={{ top: 0 }} />
             <Image src="/images/Wishes/DaunAtas.webp" alt="" width={999} height={999} priority
               className="absolute z-10 w-full pointer-events-none" style={{ top: 0 }} />
@@ -100,15 +100,15 @@ const [selectedMessage, setSelectedMessage] = useState<WishItem | null>(null);
               className="absolute z-10 w-full pointer-events-none" style={{ top: 0, right: 0 }} />
 
             {/* BUNGA & DAUN BAWAH */}
-            <Image src="/images/Wishes/BungaKananBawah.webp" alt="" width={999} height={999} priority
+            <Image src="/images/Wishes/BungaKanan.svg" alt="" width={999} height={999} priority
               className="absolute z-0 w-full pointer-events-none" style={{ bottom: 0, right: 0 }} />
-            <Image src="/images/Wishes/BungaKiriBawah.webp" alt="" width={999} height={999} priority
+            <Image src="/images/Wishes/BungaKiri.svg" alt="" width={999} height={999} priority
               className="absolute z-0 w-full pointer-events-none" style={{ bottom: 0, left: 0 }} />
             <Image src="/images/Wishes/DaunBawah.webp" alt="" width={999} height={999} priority
               className="absolute z-10 w-full pointer-events-none" style={{ bottom: 0, left: 0 }} />
 
             {/* CONTENT */}
-            <div className="relative z-20 flex flex-col items-center pt-[40px] pb-[38px] w-[284px] mx-auto gap-[20px]">
+            <div className="relative z-20 flex flex-col items-center pt-[42px] pb-[38px] w-[284px] mx-auto gap-[20px]">
               <h2 className="font-cylburn text-[56px] text-[#F0E8D9] text-center">
                 Your Wishes
               </h2>
@@ -156,7 +156,7 @@ const [selectedMessage, setSelectedMessage] = useState<WishItem | null>(null);
                       <div className="sticky bottom-0 w-full h-[18px] bg-white z-10" />
                     </motion.div>
                   ) : (
-                    <motion.div key="grid" className="grid grid-cols-2 gap-2"
+                    <motion.div key="grid" className="grid grid-cols-2 gap-3"
                       initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>
                       {pesanList.map((item) => (
@@ -166,7 +166,7 @@ const [selectedMessage, setSelectedMessage] = useState<WishItem | null>(null);
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                           onClick={() => setSelectedMessage(item)}
-                          className="rounded-md overflow-hidden shadow-md bg-white flex flex-col cursor-pointer"
+                          className="rounded-md overflow-hidden  shadow-md bg-white flex flex-col cursor-pointer"
                         >
                           <div className="p-[10px] relative flex-1 flex flex-col justify-center">
                             <p className="absolute top-[2px] left-[10px] text-[32px] font-bold font-garamond text-[#670C0F]">"</p>
@@ -208,14 +208,14 @@ const [selectedMessage, setSelectedMessage] = useState<WishItem | null>(null);
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-[60]">
           <div className="bg-[#F7F8F2] rounded-2xl p-6 w-[340px] text-center shadow-xl border border-[#E4E7D6]">
-            <h3 className="text-[22px] font-lora font-semibold text-[#4E4E4E] mb-3 tracking-wide">Pesan Terkirim!</h3>
-            <div className="w-10 h-[2px] bg-[#4E4E4E] mx-auto mb-4 opacity-60" />
-            <p className="text-[16px] text-[#4E4E4E] font-lora leading-relaxed mb-6">
+            <h3 className="text-[22px] font-garamond font-semibold text-[#7B2729] mb-3 tracking-wide">Pesan Terkirim!</h3>
+            <div className="w-10 h-[2px] bg-[#7B2729] mx-auto mb-4 opacity-60" />
+            <p className="text-[16px] text-[#7B2729] font-garamond leading-relaxed mb-6">
               Terima kasih atas doa dan ucapan baik Anda. Kami sangat menghargai pesan yang telah diberikan.
             </p>
             <button
               onClick={() => setShowPopup(false)}
-              className="bg-[#4E4E4E] transition-all text-white px-6 py-2 rounded-full text-[14px] tracking-wide font-sweetsans"
+              className="bg-[#7B2729] transition-all text-white px-6 py-2 rounded-full text-[14px] tracking-wide font-garamond"
             >
               Close
             </button>

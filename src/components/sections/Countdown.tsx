@@ -38,7 +38,7 @@ const OvalUnit = ({ value, label, left }: { value: number; label: string; left: 
     <span style={{ fontFamily: "EB Garamond, serif", fontSize: 48, lineHeight: "25px", color: "#7C1419" }}>
       {String(value).padStart(2, "0")}
     </span>
-    <span style={{ fontFamily: "EB Garamond, serif", fontSize: 8, marginTop: 8, color: "#7C1419" }}>
+    <span style={{ fontFamily: "EB Garamond, serif", fontSize: 8, marginTop: 12, color: "#7C1419" }}>
       {label}
     </span>
   </div>
@@ -64,13 +64,13 @@ export default function Countdown() {
   const values = [days, hours, minutes, seconds];
 
   const topBase = 25;
-  const hendyTop = topBase + 40 + 51;
-  const andTop = hendyTop + 38 + 8;
-  const angeleTop = andTop + 28;
-  const joyTop = angeleTop + 38 + 29;
+  const hendyTop = topBase + 40 + 45;
+  const andTop = hendyTop + 38;
+  const angeleTop = andTop + 32;
+  const joyTop = angeleTop + 38 + 45;
   const dateTop = joyTop + 40 + 67;
-  const ovalTop = dateTop + 24 + 37;
-  const buttonTop = ovalTop + 100 + 20;
+  const ovalTop = dateTop + 24 + 40;
+  const buttonTop = ovalTop + 100 + 33;
   const CANVAS_HEIGHT = buttonTop + 30;
 
   return (
@@ -92,21 +92,21 @@ export default function Countdown() {
         }}
       >
         <Image
-                  src="/images/Countdown/BungaKiri.webp"
+                  src="/images/Countdown/BungaKiri.svg"
                   alt=""
                   width={175}
                   height={175}
                   className="absolute z-0"
-                  style={{ top: -78, left: 0 }}
+                  style={{ top: -75, left: -5 }}
                 />
 
         <Image
-                  src="/images/Countdown/BungaKanan.webp"
+                  src="/images/Countdown/BungaKana.svg"
                   alt=""
-                  width={205}
-                  height={205}
+                  width={250}
+                  height={250}
                   className="absolute z-0"
-                  style={{ bottom: -120, right: 0 }}
+                  style={{ bottom: -230, right: -5 }}
                 />
 
         {/* Cordially */}
@@ -155,7 +155,7 @@ export default function Countdown() {
         </div>
 
         {/* Button */}
-       <div
+       <div 
   className="absolute flex items-center justify-center bg-white border border-white rounded-full"
   style={{
     top: buttonTop,
@@ -165,9 +165,12 @@ export default function Countdown() {
     height: 30,
   }}
 >
-  <span className="text-[#670C0F] text-[12px] font-serif">
+  <a   href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Hendy+%26+Angele&dates=20260523T000000Z/20260523T235959Z&details=Wedding+of+Hendy+Sudjono+%26+Angele+Tantiana"
+  target="_blank"
+  rel="noopener noreferrer" 
+  className="text-[#670C0F] text-[12px] font-serif">
     MARK YOUR CALENDAR
-  </span>
+  </a>
 </div>
       </div>
     </div>

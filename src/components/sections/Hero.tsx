@@ -44,7 +44,7 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
   /> */}
         {/* z-0 — BungaKiri */}
         <Image
-          src="/images/Hero/BungaKiriHD.webp"
+          src="/images/Hero/BungaKiri.svg"
           alt=""
           width={270}
           height={220}
@@ -55,7 +55,7 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
         {/* z-10 — AmplopKotak (dalam merah) */}
         {/* AmplopKotak */}
         <Image
-          src="/images/Hero/AmplopKotak.webp"
+          src="/images/Hero/AmplopKotak.svg"
           alt=""
           width={189}
           height={235}
@@ -69,16 +69,11 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
           className="absolute z-[55] flex flex-col items-center justify-center text-center"
           style={{ top: 220, left: 170, width: 189, height: 235 }}
         >
-          <p
-            className="font-cylburn text-[#670C0F] leading-none"
-            style={{ fontSize: 28 }}
-          >
-            Hendy
-            <br />
-            &amp;
-            <br />
-            Angele
-          </p>
+          <p className="font-cylburn text-[#670C0F] flex flex-col items-center leading-none">
+  <span className="text-[28px]">Hendy</span>
+  <span className="text-[20px] -my-2">&amp;</span>
+  <span className="text-[28px]">Angele</span>
+</p>
           <p className="font-garamond text-black leading-snug mt-[8px] text-[9px]">
             We are delighted to
             <br />
@@ -92,21 +87,21 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
 
         {/* z-10 — Pita kiri (belakang amplop) */}
         <Image
-          src="/images/Hero/Pita.webp"
+          src="/images/Hero/Pita.svg"
           alt=""
           width={107}
           height={311}
           className="absolute z-40"
           style={{
             top: 119,
-            left: 246,
+            left: 253,
             clipPath: "inset(0 50% 0 0)",
           }}
         />
 
         {/* z-20 — Amplop BAWAH (di belakang foto) */}
         <Image
-          src="/images/Hero/Amplop.webp"
+          src="/images/Hero/AmplopHD.svg"
           alt=""
           width={279}
           height={302}
@@ -117,22 +112,22 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
 
         {/* z-30 — Foto Cewe */}
         <Image
-          src="/images/Hero/FotoCewe.webp"
+          src="/images/Hero/FotoCew.svg"
           alt="Foto pengantin wanita"
-          width={110}
+          width={115}
           height={103}
           className="absolute z-30"
-          style={{ top: 105, left: 94 }}
+          style={{ top: 105, left: 90 }}
         />
 
         {/* z-30 — Foto Cowo */}
         <Image
-          src="/images/Hero/FotoCowo.webp"
+          src="/images/Hero/FotoCowo.svg"
           alt="Foto pengantin pria"
-          width={130}
-          height={130}
+          width={140}
+          height={140}
           className="absolute z-[35]"
-          style={{ top: 123, left: 160 }}
+          style={{ top: 125, left: 160 }}
         />
 
         {/* z-40 — Amplop ATAS / AmplopDouble (nutupin bawah foto) */}
@@ -150,18 +145,18 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
         <Image
           src="/images/Hero/AmplopBunga.webp"
           alt=""
-          width={245}
+          width={255}
           height={280}
           className="absolute z-30"
-          style={{ top: 305, left: 27 }}
+          style={{ top: 300, left: 20 }}
         />
 
         {/* Teks di atas AmplopBunga */}
         <div
           className="absolute z-[35] flex flex-col justify-center"
           style={{
-            top: 318,
-            left: 27,
+            top: 320,
+            left: 29,
             width: 245,
             height: 280,
             paddingLeft: 80,
@@ -172,54 +167,54 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
             <br />
             but one flesh.
           </p>
-          <p className="font-garamond text-[#7C1419] leading-snug text-[9px] mt-1">
+          <p className="font-garamond text-[#7C1419] leading-snug text-[9px] mt-2">
             Therefore what God
             <br />
             has joined together, let no one separate
           </p>
-          <p className="font-garamond text-[#7C1419] italic text-[9px] mt-3 text-center">
+          <p className="font-garamond text-[#7C1419] italic text-[9px] mt-3 pl-11">
             Matthew 19:6
           </p>
         </div>
 
         {/* z-50 — Bunga Center */}
         <Image
-          src="/images/Hero/Bunga.webp"
+          src="/images/Hero/BungaHD.webp"
           alt=""
           width={180}
           height={175}
           className="absolute z-50"
-          style={{ top: 252, left: 41 }}
+          style={{ top: 248, left: 41 }}
         />
 
         {/* z-50 — Pita kanan (depan amplop) */}
         <Image
-          src="/images/Hero/Pita.webp"
+          src="/images/Hero/Pita.svg"
           alt=""
           width={107}
           height={311}
           className="absolute z-[90]"
           style={{
             top: 119,
-            left: 246,
+            left: 252,
             clipPath: "inset(0 0 0 50%)",
           }}
         />
 
         {/* z-50 — BungaKanan */}
         <Image
-          src="/images/Hero/BungaKananHD.webp"
+          src="/images/Countdown/BungaKanan.svg"
           alt=""
-          width={220}
+          width={215}
           height={220}
           className="absolute z-0"
-          style={{ bottom: 25, right: -13 }}
+          style={{ bottom: 37, right: -13 }}
         />
 
         {/* z-50 — Teks */}
         <div
           className="absolute w-full text-center px-4 z-50"
-          style={{ top: 620, color: "#F5E6C8" }}
+          style={{ top: 615, color: "#F5E6C8" }}
         >
           <p className="font-garamond text-[14px] text-white">
             By the Grace of God

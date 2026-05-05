@@ -82,7 +82,7 @@ const Header = ({ onOpenWishes, onOpenGift, onCloseAll }: Props): React.ReactEle
             }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             style={{ originX: 0, originY: 0 }}
-            className="absolute top-[12px] left-[18px] bg-[#7B7B7B]/70 py-4 px-5 text-white w-[255px]"
+            className="absolute top-[12px] left-[25px] bg-[#7B7B7B]/70 py-4 px-5 text-white w-[255px]"
           >
             {/* CLOSE X */}
             <motion.button
@@ -93,7 +93,7 @@ const Header = ({ onOpenWishes, onOpenGift, onCloseAll }: Props): React.ReactEle
               transition={{ duration: 1, ease: "easeOut" }}
               className="absolute top-[-12px] left-[6px]"
             >
-              <p className="text-[32px] text-white font-ibm">x</p>
+              <p className="text-[32px] text-white font-noto">x</p>
             </motion.button>
 
             {/* MENU */}

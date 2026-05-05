@@ -20,13 +20,13 @@ const Venue = () => {
   }, []);
 
   // Kalkulasi posisi vertikal
-  const venueTop         = 49;
-  const imageTop         = venueTop + 96 + 16;
-  const grandBallroomTop = imageTop + 326 + 45;
+  const venueTop         = 75;
+  const imageTop         = venueTop + 96 + 20;
+  const grandBallroomTop = imageTop + 310;
   const addressTop       = grandBallroomTop + 62 + 17;
   const holyTop          = addressTop + 20 + 68;
-  const receptionTop     = holyTop + 74 + 34;
-  const ovalTop          = receptionTop + 74 + 77;
+  const receptionTop     = holyTop + 74 + 30;
+  const ovalTop          = receptionTop + 74 + 63;
   const CANVAS_HEIGHT    = ovalTop + 460 + 60;
 
   const bungaKiriTop     = CANVAS_HEIGHT - 310 - 300;
@@ -36,10 +36,11 @@ const Venue = () => {
       className="relative w-full"
       style={{
         height: `${CANVAS_HEIGHT * scale}px`,
+
       }}
     >
       <div
-  className="absolute top-0 left-1/2 origin-top"
+  className="absolute top-0 left-1/2 origin-top z-10"
         style={{
           width: CANVAS_WIDTH,
           height: CANVAS_HEIGHT,
@@ -48,12 +49,12 @@ const Venue = () => {
       >
         {/* Bunga Kiri */}
         <Image
-          src="/images/Venue/BungaKiri.webp"
+          src="/images/Venue/BungaKiri.svg"
           alt=""
-          width={300}
-          height={300}
+          width={318}
+          height={318}
           className="absolute z-0"
-          style={{ top: bungaKiriTop, left: 0 }}
+          style={{ bottom: 270, left: 0 }}
         />
 
         {/* Judul Venue */}
@@ -69,10 +70,10 @@ const Venue = () => {
           className="absolute bg-white z-10"
           style={{
             top: imageTop,
-            left: (CANVAS_WIDTH - 236) / 2,
-            width: 236,
-            height: 326,
-            padding: 3,
+            left: (CANVAS_WIDTH - 182) / 2,
+            width: 182,
+            height: 266,
+            padding: 0.1,
           }}
         >
           <div className="relative w-full h-full">
@@ -83,15 +84,15 @@ const Venue = () => {
               className="object-cover"
             />
           </div>
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full flex justify-center">
+          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-full flex justify-center">
             <a
-              href="https://maps.google.com"
+              href="https://maps.app.goo.gl/Su41WKmteCRACRKx5"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center bg-white"
               style={{
                 width: 160,
-                height: 32,
+                height: 30,
                 borderRadius: 58,
                 fontFamily: "EB Garamond, serif",
                 fontSize: 12,
@@ -107,10 +108,10 @@ const Venue = () => {
         {/* Grand Ballroom */}
         <p
           className="absolute w-full text-center text-white z-10"
-          style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 30, lineHeight: "31px" }}
+          style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38, lineHeight: "31px" }}
         >
           Grand Ballroom<br />
-          Pullman Bandung Grand Central
+          <span className="text-[30px]">Pullman Bandung Grand Central</span>
         </p>
 
         {/* Alamat */}
@@ -145,7 +146,7 @@ const Venue = () => {
 
         {/* Foto Oval */}
         <div
-          className="absolute overflow-hidden z-10"
+          className="absolute overflow-hidden z-20"
           style={{
             top: ovalTop,
             left: (CANVAS_WIDTH - 302) / 2,
@@ -159,7 +160,7 @@ const Venue = () => {
             src="/images/Venue/Pengantin.webp"
             alt="Foto couple"
             fill
-            className="object-cover"
+            className="object-cover z-20"
           />
         </div>
       </div>

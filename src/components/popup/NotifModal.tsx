@@ -216,14 +216,14 @@ const NotifModal: React.FC<NotifModalProps> = ({
       {/* CARD */}
       <div className="relative bg-white rounded-lg lg:rounded-2xl shadow-xl flex flex-col items-center text-center animate-modalIn overflow-hidden w-[322px] h-[360px] lg:w-[485px] lg:h-[543px]">
         {/* CONTENT */}
-        <div className="flex-1 flex flex-col items-center justify-start pt-[37px] lg:pt-[57px] px-7 lg:px-10 w-full">
+        <div className="flex-1 flex flex-col items-center justify-start pt-[37px] lg:pt-[57px] px-7 lg:px-7 w-full">
           {/* ICON */}
-          <div className="mb-3 flex items-center justify-center">
+          <div className="mb-3 lg:mb-5 flex items-center justify-center">
             {ICON_MAP[config.icon]}
           </div>
 
           {/* JUDUL */}
-          <h3 className="uppercase tracking-[0.12em] mb-4 lg:mb-6 text-[16px] lg:text-[24px] font-extrabold text-[#605F5E] font-noto">
+          <h3 className="uppercase tracking-[0.12em] mb-4  text-[16px] lg:text-[24px] font-extrabold text-[#605F5E] font-noto">
             {config.title}
           </h3>
 

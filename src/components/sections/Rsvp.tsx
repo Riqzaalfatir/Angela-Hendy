@@ -29,10 +29,10 @@ const Rsvp = ({ onOpenWishes }: Props) => {
     return () => window.removeEventListener("resize", updateScale);
   }, []);
 
-  const rsvpTop = 69;
-  const dearTop = rsvpTop + 96 + 12;
-  const selaTop = dearTop + 20 + 4;
-  const kindlyTop = selaTop + 56 + 4;
+  const rsvpTop = 0;
+  const dearTop = rsvpTop + 96 + 32;
+  const selaTop = dearTop + 20 + 15;
+  const kindlyTop = selaTop + 56;
   const buttonsTop = kindlyTop + 44 + 21;
   const confirmTextTop = buttonsTop + 33 + 36;
   const confirmBtnTop = confirmTextTop + 20 + 37;
@@ -90,36 +90,35 @@ const Rsvp = ({ onOpenWishes }: Props) => {
         >
           {/* Ornamen */}
           <Image
-            src="/images/Rsvp/BungaKananAtas.webp"
+            src="/images/Rsvp/BungaKananAtas.svg"
             alt=""
-            width={300}
-            height={300}
-            className="absolute z-0"
-            style={{ top: -200, right: 0 }}
+            width={320}
+            height={320}
+            className="absolute -z-10"
+            style={{ top: -360, right: 0 }}
           />
           <Image
-            src="/images/Rsvp/BungaKiri.webp"
+            src="/images/Rsvp/BungaKiri.svg"
             alt=""
-            width={300}
-            height={300}
+            width={330}
+            height={330}
             className="absolute z-0"
             style={{ bottom: 0, left: 0 }}
           />
           <Image
-            src="/images/Rsvp/BungaKananBawah.webp"
+            src="/images/Rsvp/BungaKananBawah.svg"
             alt=""
-            width={300}
-            height={300}
+            width={213}
+            height={213}
             className="absolute z-0"
-            style={{ bottom: 0, right: 0 }}
+            style={{ bottom: 0, right: -10 }}
           />
 
           {/* Judul */}
           <p
-            className="absolute w-full text-center text-white z-10"
+            className="absolute w-full text-center text-white z-10 font-cylburn"
             style={{
               top: rsvpTop,
-              fontFamily: "Cylburn, cursive",
               fontSize: 96,
               lineHeight: "96px",
             }}
@@ -129,10 +128,9 @@ const Rsvp = ({ onOpenWishes }: Props) => {
 
           {/* Dear */}
           <p
-            className="absolute w-full text-center text-white z-10"
+            className="absolute w-full text-center text-white z-10 font-garamond"
             style={{
               top: dearTop,
-              fontFamily: "EB Garamond, serif",
               fontSize: 14,
               lineHeight: "20px",
             }}
@@ -142,10 +140,9 @@ const Rsvp = ({ onOpenWishes }: Props) => {
 
           {/* Nama */}
           <p
-            className="absolute w-full text-center text-white z-10"
+            className="absolute w-full text-center text-white z-10 font-cylburn"
             style={{
               top: selaTop,
-              fontFamily: "Cylburn, cursive",
               fontSize: 46,
               lineHeight: "46px",
             }}

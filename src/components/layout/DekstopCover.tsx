@@ -21,7 +21,7 @@ const DesktopCover = () => {
             The Wedding of
           </p>
 
-          <h1 className="font-cylburn text-[64px] text-white">Galih & Vio</h1>
+          <h1 className="font-cylburn text-[64px] text-white">Hendy & Angele</h1>
 
           <p className="font-garamond text-[20px] text-white">
             Saturday, 23 May 2026
