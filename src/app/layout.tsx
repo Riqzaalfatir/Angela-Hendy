@@ -44,9 +44,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} ${cylburn.variable}  ${notoSans.variable}
-`}
+      className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} ${cylburn.variable} ${notoSans.variable}`}
     >
+      <head>
+        <link rel="preload" as="image" href="/images/Wishes/BungaAtas.svg" />
+        <link rel="preload" as="image" href="/images/Wishes/DaunAtas.webp" />
+        <link rel="preload" as="image" href="/images/Wishes/DaunBawah.webp" />
+        <link rel="preload" as="image" href="/images/Wishes/DaunKanan.webp" />
+        <link rel="preload" as="image" href="/images/Wishes/BungaKiri.svg" />
+        <link rel="preload" as="image" href="/images/Wishes/BungaKanan.svg" />
+        <link rel="preload" as="image" href="/images/Wishes/BungaKananBawah.webp" />
+        <link rel="preload" as="image" href="/images/Wishes/BungaKiriBawah.webp" />
+      </head>
       <body>{children}</body>
     </html>
   );

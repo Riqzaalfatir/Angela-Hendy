@@ -35,7 +35,7 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
   }}
 >
   {/* Background image */}
-  {/* <Image
+  {/* <Image priority
     src="/images/Hero/Default.webp"
     alt=""
     fill
@@ -43,7 +43,7 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
     priority
   /> */}
         {/* z-0 — BungaKiri */}
-        <Image
+        <Image priority
           src="/images/Hero/BungaKiri.svg"
           alt=""
           width={270}
@@ -54,7 +54,7 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
 
         {/* z-10 — AmplopKotak (dalam merah) */}
         {/* AmplopKotak */}
-        <Image
+        <Image priority
           src="/images/Hero/AmplopKotak.svg"
           alt=""
           width={189}
@@ -86,7 +86,7 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
         </div>
 
         {/* z-10 — Pita kiri (belakang amplop) */}
-        <Image
+        <Image priority
           src="/images/Hero/Pita.svg"
           alt=""
           width={107}
@@ -100,18 +100,17 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
         />
 
         {/* z-20 — Amplop BAWAH (di belakang foto) */}
-        <Image
+        <Image priority
           src="/images/Hero/AmplopHD.svg"
           alt=""
           width={279}
           height={302}
           className="absolute z-20"
           style={{ top: 55, left: 46 }}
-          priority
         />
 
         {/* z-30 — Foto Cewe */}
-        <Image
+        <Image priority
           src="/images/Hero/FotoCew.svg"
           alt="Foto pengantin wanita"
           width={115}
@@ -121,7 +120,7 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
         />
 
         {/* z-30 — Foto Cowo */}
-        <Image
+        <Image priority
           src="/images/Hero/FotoCowo.svg"
           alt="Foto pengantin pria"
           width={140}
@@ -131,7 +130,7 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
         />
 
         {/* z-40 — Amplop ATAS / AmplopDouble (nutupin bawah foto) */}
-        <Image
+        <Image priority
           src="/images/Hero/AmplopDouble.webp"
           alt=""
           width={275}
@@ -142,7 +141,7 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
 
         {/* z-50 — AmplopBunga */}
         {/* AmplopBunga */}
-        <Image
+        <Image priority
           src="/images/Hero/AmplopBunga.webp"
           alt=""
           width={255}
@@ -178,7 +177,7 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
         </div>
 
         {/* z-50 — Bunga Center */}
-        <Image
+        <Image priority
           src="/images/Hero/BungaHD.webp"
           alt=""
           width={180}
@@ -188,7 +187,7 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
         />
 
         {/* z-50 — Pita kanan (depan amplop) */}
-        <Image
+        <Image priority
           src="/images/Hero/Pita.svg"
           alt=""
           width={107}
@@ -202,7 +201,7 @@ style={{ height: `${CANVAS_HEIGHT * scale}px` }}
         />
 
         {/* z-50 — BungaKanan */}
-        <Image
+        <Image priority
           src="/images/Countdown/BungaKanan.svg"
           alt=""
           width={215}
