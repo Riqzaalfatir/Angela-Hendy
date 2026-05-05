@@ -4,10 +4,6 @@ import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 
-type MenuItem = {
-  name: string;
-  link: string;
-};
 
 type Props = {
   onOpenWishes: () => void;
@@ -16,7 +12,7 @@ type Props = {
 
 };
 
-const Header = ({ onOpenWishes, onOpenGift, onCloseAll }: Props): JSX.Element => {
+const Header = ({ onOpenWishes, onOpenGift, onCloseAll }: Props): React.ReactElement => {
   const [open, setOpen] = useState<boolean>(false);
 
   const linkMenu = [
