@@ -68,7 +68,7 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
             position: "relative",
             transition: "height 0.4s ease",
           }}
-          className="min-h-[100%] lg:overflow-hidden"
+          className="min-h-[100%] lg:overflow-hidden lg:overflow-y-auto no-scrollbar"
           onClick={(e) => e.stopPropagation()}
         >
           <div
@@ -130,7 +130,7 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
               </button>
 
               {/* LIST PESAN */}
-              <div className={`w-full ${!showAll ? "bg-white rounded-2xl h-[325px] overflow-y-auto" : ""}`}>
+              <div className={`w-full ${!showAll ? "bg-white rounded-2xl h-[325px] overflow-y-auto no-scrollbar" : ""}`}>
                 <motion.div mode="wait">
                   {!showAll ? (
                     <motion.div key="list" initial={{ opacity: 0 }} animate={{ opacity: 1 }}

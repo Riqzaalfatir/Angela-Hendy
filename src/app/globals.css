@@ -42,7 +42,7 @@ a {
 
 /* ─── Desktop split layout ─── */
 
-/* Mobile: satu kolom, cover disembunyikan */
+/* Mobile */
 .desktop-layout {
   display: block;
   min-height: 100dvh;
@@ -58,7 +58,7 @@ a {
   min-height: 100dvh;
 }
 
-/* Desktop (≥1024px): grid dua kolom */
+/* Desktop (≥1024px) */
 @media (min-width: 1024px) {
   .desktop-layout {
     display: grid;
@@ -70,9 +70,13 @@ a {
   .cover-panel {
     display: block;
     height: 100dvh;
-    overflow: hidden; /* cover foto tidak scroll */
-    position: sticky;
-    top: 0;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .cover-panel::-webkit-scrollbar {
+    display: none;
   }
 
   .sections-panel {
@@ -81,11 +85,16 @@ a {
     overflow-y: auto;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .sections-panel::-webkit-scrollbar {
+    display: none;
   }
 }
 
+/* Wishes overlay */
 .wishes-overlay {
   position: fixed;
   top: 0;
@@ -94,7 +103,7 @@ a {
   left: 0;
   z-index: 50;
   overflow-y: auto;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 1024px) {
@@ -104,16 +113,26 @@ a {
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: none;
+    -ms-overflow-style: none;
     min-height: 100dvh;
   }
+
   .wishes-overlay::-webkit-scrollbar {
     display: none;
   }
 
-  /* ✅ paksa inner canvas full width overlay */
   .wishes-overlay > div {
     min-width: 100%;
     background-size: cover;
   }
+}
 
+/* No scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

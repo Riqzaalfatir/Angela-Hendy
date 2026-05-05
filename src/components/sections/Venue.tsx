@@ -8,11 +8,16 @@ const CANVAS_WIDTH = 390;
 const Venue = () => {
   const [scale, setScale] = useState(1);
 
- const updateScale = () => {
-  const panel = document.querySelector('.sections-panel') as HTMLElement;
-  const containerWidth = panel ? panel.offsetWidth : window.innerWidth;
-  setScale(containerWidth / CANVAS_WIDTH);
-};
+  useEffect(() => {
+    const updateScale = () => {
+      const panel = document.querySelector('.sections-panel') as HTMLElement;
+      const containerWidth = panel ? panel.offsetWidth : window.innerWidth;
+      setScale(containerWidth / CANVAS_WIDTH);
+    };
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
 
   // Kalkulasi posisi vertikal
   const venueTop         = 49;
@@ -34,11 +39,11 @@ const Venue = () => {
       }}
     >
       <div
-        className="absolute top-0 left-0 origin-top-left"
+  className="absolute top-0 left-1/2 origin-top"
         style={{
           width: CANVAS_WIDTH,
           height: CANVAS_HEIGHT,
-          transform: `scale(${scale})`,
+    transform: `translateX(-50%) scale(${scale})`,
         }}
       >
         {/* Bunga Kiri */}
