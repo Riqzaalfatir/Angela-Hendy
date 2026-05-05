@@ -14,12 +14,18 @@ type Props = {
   onOpenGift: () => void;
 };
 
+type WishItem = {
+  id: number;
+  nama: string;
+  pesan: string;
+};
+
 export default function Wishes({ open, onClose, onOpenGift }: Props) {
   const [nama, setNama] = useState("");
   const [pesan, setPesan] = useState("");
   const [pesanList, setPesanList] = useState(dummyPesan);
   const [showAll, setShowAll] = useState(false);
-  const [selectedMessage, setSelectedMessage] = useState<any>(null);
+const [selectedMessage, setSelectedMessage] = useState<WishItem | null>(null);
   const [showPopup, setShowPopup] = useState(false);
   const [scale, setScale] = useState(1);
   const [canvasHeight, setCanvasHeight] = useState(844);
@@ -131,7 +137,7 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
 
               {/* LIST PESAN */}
               <div className={`w-full ${!showAll ? "bg-white rounded-2xl h-[325px] overflow-y-auto no-scrollbar" : ""}`}>
-                <motion.div mode="wait">
+                <motion.div>
                   {!showAll ? (
                     <motion.div key="list" initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>

@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 
-export default function Opening({ setStart, namaTamu }) {
+type Props = {
+  setStart: (value: boolean) => void;
+  namaTamu: string;
+};
+
+export default function Opening({ setStart, namaTamu }: Props) {
   return (
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center"

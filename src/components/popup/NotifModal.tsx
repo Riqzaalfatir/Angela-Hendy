@@ -184,6 +184,13 @@ const NotifModal: React.FC<NotifModalProps> = ({
   onConfirm,
   waNumber = "6281234567890",
 }) => {
+    useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+  
   const config = type ? NOTIF_CONFIG[type] : null;
   if (!type || !config) return null;
 
@@ -191,12 +198,7 @@ const NotifModal: React.FC<NotifModalProps> = ({
     if (e.target === e.currentTarget) onClose();
   };
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, []);
+
 
   const handleAction = (action: ButtonAction) => {
     if (action === "close") onClose();
