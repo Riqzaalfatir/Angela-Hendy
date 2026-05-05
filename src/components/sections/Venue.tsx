@@ -8,12 +8,11 @@ const CANVAS_WIDTH = 390;
 const Venue = () => {
   const [scale, setScale] = useState(1);
 
-  useEffect(() => {
-    const updateScale = () => setScale(window.innerWidth / CANVAS_WIDTH);
-    updateScale();
-    window.addEventListener("resize", updateScale);
-    return () => window.removeEventListener("resize", updateScale);
-  }, []);
+ const updateScale = () => {
+  const panel = document.querySelector('.sections-panel') as HTMLElement;
+  const containerWidth = panel ? panel.offsetWidth : window.innerWidth;
+  setScale(containerWidth / CANVAS_WIDTH);
+};
 
   // Kalkulasi posisi vertikal
   const venueTop         = 49;
@@ -28,7 +27,7 @@ const Venue = () => {
   const bungaKiriTop     = CANVAS_HEIGHT - 310 - 300;
 
   return (
-    <div
+    <div id="venue"
       className="relative w-full"
       style={{
         height: `${CANVAS_HEIGHT * scale}px`,

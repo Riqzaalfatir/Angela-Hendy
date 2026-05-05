@@ -10,11 +10,15 @@ export default function Footer() {
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
-    const updateScale = () => setScale(window.innerWidth / CANVAS_WIDTH);
-    updateScale();
-    window.addEventListener("resize", updateScale);
-    return () => window.removeEventListener("resize", updateScale);
-  }, []);
+  const updateScale = () => {
+    const isMobile = window.innerWidth < 1024;
+    const containerWidth = isMobile ? window.innerWidth : 435;
+    setScale(containerWidth / CANVAS_WIDTH);
+  };
+  updateScale();
+  window.addEventListener("resize", updateScale);
+  return () => window.removeEventListener("resize", updateScale);
+}, []);
 
   return (
     <div

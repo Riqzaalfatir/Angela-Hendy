@@ -13,12 +13,16 @@ type Props = {
 const Rsvp = ({ onOpenWishes }: Props) => {
     const [scale, setScale] = useState(1);
 
-  useEffect(() => {
-    const updateScale = () => setScale(window.innerWidth / CANVAS_WIDTH);
-    updateScale();
-    window.addEventListener("resize", updateScale);
-    return () => window.removeEventListener("resize", updateScale);
-  }, []);
+ useEffect(() => {
+  const updateScale = () => {
+    const panel = document.querySelector('.sections-panel') as HTMLElement;
+    const containerWidth = panel ? panel.offsetWidth : window.innerWidth;
+    setScale(containerWidth / CANVAS_WIDTH);
+  };
+  updateScale();
+  window.addEventListener("resize", updateScale);
+  return () => window.removeEventListener("resize", updateScale);
+}, []);
 
   // Kalkulasi posisi vertikal
   const rsvpTop = 69;
@@ -34,7 +38,7 @@ const Rsvp = ({ onOpenWishes }: Props) => {
   const CANVAS_HEIGHT = wishesTop + 40 + 80;
 
   return (
-    <div
+    <div id="rsvp"
       className="relative w-full"
       style={{ height: `${CANVAS_HEIGHT * scale}px` }}
     >

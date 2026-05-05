@@ -10,16 +10,19 @@ export default function HeroSection() {
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
-    const updateScale = () => {
-      setScale(window.innerWidth / CANVAS_WIDTH);
-    };
-    updateScale();
-    window.addEventListener("resize", updateScale);
-    return () => window.removeEventListener("resize", updateScale);
-  }, []);
+  const updateScale = () => {
+    // ✅ ambil lebar sections-panel, bukan window
+    const panel = document.querySelector('.sections-panel') as HTMLElement;
+    const containerWidth = panel ? panel.offsetWidth : window.innerWidth;
+    setScale(containerWidth / CANVAS_WIDTH);
+  };
+  updateScale();
+  window.addEventListener("resize", updateScale);
+  return () => window.removeEventListener("resize", updateScale);
+}, []);
 
   return (
-    <div
+    <div id="hero"
       className="relative w-full overflow-visible"
 style={{ height: `${CANVAS_HEIGHT * scale}px` }}
     >

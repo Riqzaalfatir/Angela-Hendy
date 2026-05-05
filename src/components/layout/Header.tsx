@@ -9,17 +9,23 @@ type MenuItem = {
   link: string;
 };
 
-const Header = (): JSX.Element => {
+type Props = {
+  onOpenWishes: () => void;
+  onOpenGift: () => void;
+    onCloseAll: () => void;  // ← tambah
+
+};
+
+const Header = ({ onOpenWishes, onOpenGift, onCloseAll }: Props): JSX.Element => {
   const [open, setOpen] = useState<boolean>(false);
 
-  const linkMenu: MenuItem[] = [
-    { name: "HOME", link: "#hero" },
-    { name: "PROFILE", link: "#profile" },
-    { name: "OUR STORY", link: "#ourstory" },
-    { name: "TIME & LOCATION", link: "#time" },
-    { name: "RSVP", link: "#rsvp" },
-    { name: "GALLERY", link: "#galleri" },
-    { name: "WEDDING GIFT", link: "#gift" },
+  const linkMenu = [
+    { name: "HOME", link: "#hero", action: null },
+    { name: "PROFILE", link: "#profile", action: null },
+    { name: "VENUE", link: "#venue", action: null },
+    { name: "RSVP", link: "#rsvp", action: null },
+    { name: "YOUR WISHES", link: null, action: onOpenWishes },
+    { name: "WEDDING GIFT", link: null, action: onOpenGift },
   ];
 
   const container = {
@@ -52,7 +58,7 @@ const Header = (): JSX.Element => {
 
   return (
     <div
-      className="fixed top-0 left-0 w-full z-50 px-4 py-3 lg:left-auto lg:right-0 lg:w-[435px] lg:px-5 lg:py-4"
+      className="fixed top-0 left-0 w-full z-[999] px-4 py-3 lg:left-auto lg:right-0 lg:w-[435px] lg:px-5 lg:py-4"
       style={{ willChange: "transform", transform: "translateZ(0)" }}
     >
       {/* HAMBURGER */}
@@ -101,25 +107,27 @@ const Header = (): JSX.Element => {
               animate="show"
               className="pt-3.5 pl-3 space-y-1 text-[12px] font-noto tracking-[0.2em] text-white font-medium flex flex-col"
             >
-              {linkMenu.map((menu: MenuItem) => (
+              {linkMenu.map((menu) => (
                 <motion.a
                   key={menu.name}
-                  href={menu.link}
+                  href={menu.link ?? undefined}
                   variants={itemVariants}
-                  onClick={() => {
-                    setTimeout(() => setOpen(false), 200);
-                  }}
+                 onClick={() => {
+  if (menu.action) {
+    menu.action();
+  } else {
+    onCloseAll();
+    setTimeout(() => {
+      const el = document.querySelector(menu.link!);
+      el?.scrollIntoView({ behavior: "smooth" });
+    }, 300); // kasih jeda 300ms biar modal keburu nutup dulu
+  }
+  setTimeout(() => setOpen(false), 200);
+}}
                   className="group relative flex items-center cursor-pointer"
                 >
-                  {/* PANAH */}
-                  <span className="absolute left-0 opacity-0 transition-all duration-500 ease-out group-hover:opacity-100">
-                    →
-                  </span>
-
-                  {/* TEXT */}
-                  <span className="transition-all duration-300 ease-out group-hover:translate-x-[18px]">
-                    {menu.name}
-                  </span>
+                  <span className="absolute left-0 opacity-0 transition-all duration-500 ease-out group-hover:opacity-100">→</span>
+                  <span className="transition-all duration-300 ease-out group-hover:translate-x-[18px]">{menu.name}</span>
                 </motion.a>
               ))}
             </motion.ul>

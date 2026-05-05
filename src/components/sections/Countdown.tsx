@@ -49,11 +49,15 @@ export default function Countdown() {
   const { days, hours, minutes, seconds } = useCountdown();
 
   useEffect(() => {
-    const updateScale = () => setScale(window.innerWidth / CANVAS_WIDTH);
-    updateScale();
-    window.addEventListener("resize", updateScale);
-    return () => window.removeEventListener("resize", updateScale);
-  }, []);
+  const updateScale = () => {
+    const panel = document.querySelector('.sections-panel') as HTMLElement;
+    const containerWidth = panel ? panel.offsetWidth : window.innerWidth;
+    setScale(containerWidth / CANVAS_WIDTH);
+  };
+  updateScale();
+  window.addEventListener("resize", updateScale);
+  return () => window.removeEventListener("resize", updateScale);
+}, []);
 
   const ovalLeft = [53, 134, 215, 296];
   const labels = ["Days", "Hours", "Minutes", "Seconds"];
@@ -70,7 +74,7 @@ export default function Countdown() {
   const CANVAS_HEIGHT = buttonTop + 30;
 
   return (
-    <div
+    <div id="profile"
       className="relative w-full"
       style={{
         height: `${CANVAS_HEIGHT * scale}px`,
