@@ -75,7 +75,7 @@ export default function Footer() {
 
   <div className="flex flex-col items-center  leading-none">
   <p className="font-garamond text-[11px] text-white">Reservation System by</p>
-  <div className="overflow-hidden" style={{ marginTop: -2 }}>
+  <div className="overflow-hidden" style={{ marginTop: 0.5 }}>
     <Image
       src="/images/Footer/LogoProvite.svg"
       alt="Provite Logo"

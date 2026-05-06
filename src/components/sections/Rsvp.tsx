@@ -212,7 +212,7 @@ const Rsvp = ({ onOpenWishes }: Props) => {
                 {selected === "hadir"
                   ? "CONFIRM ATTEND"
                   : selected === "tidak_hadir"
-                    ? "CONFIRM UNABLE TO ATTEND"
+                    ? "CONFIRM NOT ATTEND"
                     : "CONFIRM"}
               </button>
             </div>

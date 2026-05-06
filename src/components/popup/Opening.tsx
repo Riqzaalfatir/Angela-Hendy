@@ -2,6 +2,7 @@
   "use client";
 
   import Image from "next/image";
+  
 
   type Props = {
     setStart: (value: boolean) => void;
