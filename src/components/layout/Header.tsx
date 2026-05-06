@@ -64,7 +64,7 @@ const Header = ({ onOpenWishes, onOpenGift, onCloseAll }: Props): React.ReactEle
           whileTap={{ scale: 0.92 }}
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 250, damping: 20 }}
-          className="text-[#C3C3C3] text-[28px]"
+          className="hero-aset-8 text-[#C3C3C3] text-[28px]"
         >
           <FiMenu />
         </motion.button>
