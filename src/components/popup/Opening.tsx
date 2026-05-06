@@ -59,8 +59,6 @@
   <div className="hidden lg:block">
     <Image src="/images/Wishes/DaunAtas.webp" alt="" width={390} height={300}
       className="absolute top-0 left-0 w-[45%] pointer-events-none z-10" />
-    <Image src="/images/Wishes/DaunBawah.webp" alt="" width={390} height={300}
-      className="absolute bottom-0 left-40 w-[25%] pointer-events-none z-10" />
   </div>
 
         {/* ── CONTENT ── */}

@@ -32,7 +32,7 @@ export default function HeroSection() {
       className="relative w-full overflow-visible"
       style={{
         height: `${CANVAS_HEIGHT * scale}px`,
-        visibility: ready ? "visible" : "hidden",
+        // visibility: ready ? "visible" : "hidden",
       }}
     >
       <div
