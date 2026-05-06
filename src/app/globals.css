@@ -14,19 +14,18 @@
   }
 }
 
-/* ─── Global: sembunyikan SEMUA scrollbar ─── */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* IE/Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 *::-webkit-scrollbar {
-  display: none;                /* Chrome/Safari/Opera */
+  display: none;
 }
 
 html, body {
@@ -50,8 +49,6 @@ a {
 }
 
 /* ─── Desktop split layout ─── */
-
-/* Mobile */
 .desktop-layout {
   display: block;
   min-height: 100dvh;
@@ -67,7 +64,6 @@ a {
   min-height: 100dvh;
 }
 
-/* Desktop (≥1024px) */
 @media (min-width: 1024px) {
   .desktop-layout {
     display: grid;
@@ -91,14 +87,14 @@ a {
   }
 }
 
-/* Wishes overlay */
+/* ─── Wishes overlay ─── */
 .wishes-overlay {
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 50;
+  z-index: 40;
   overflow-y: auto;
   background: rgba(0, 0, 0, 0.5);
 }
@@ -107,18 +103,41 @@ a {
   .wishes-overlay {
     left: calc(100vw - 435px);
     width: 435px;
-    overflow-y: auto;
     overflow-x: hidden;
     min-height: 100dvh;
   }
-
   .wishes-overlay > div {
     min-width: 100%;
     background-size: cover;
   }
 }
 
-/* No scrollbar utility (tetap ada buat jaga-jaga) */
+/* ─── Gift overlay ─── */
+.gift-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 40;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 1024px) {
+  .gift-overlay {
+    left: calc(100vw - 435px);
+    width: 435px;
+    overflow-x: hidden;
+    min-height: 100dvh;
+  }
+  .gift-overlay > div {
+    min-width: 100%;
+    background-size: cover;
+  }
+}
+
+/* ─── Scrollbar utility ─── */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -128,70 +147,22 @@ a {
   scrollbar-width: none;
 }
 
+/* ─── Animasi ─── */
 #opening img,
 #hero img,
-#desktop-cover .cover-text
- {
+#desktop-cover .cover-text,
+#wishes img,
+#gift img {
   animation: fadeIn 1.2s ease-in-out both;
 }
 
 @keyframes fadeIn {
-  from { 
+  from {
     opacity: 0;
     transform: scale(0.98);
   }
-  to { 
+  to {
     opacity: 1;
     transform: scale(1);
-  }
-}
-
-.wishes-overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 40; /* turun dari 50 */
-  overflow-y: auto;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-@media (min-width: 1024px) {
-  .wishes-overlay {
-    left: calc(100vw - 435px);
-    width: 435px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    min-height: 100dvh;
-  }
-  .wishes-overlay > div {
-    min-width: 100%;
-    background-size: cover;
-  }
-}
-
-.gift-overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 40; /* sama dengan wishes */
-  overflow-y: auto;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-@media (min-width: 1024px) {
-  .gift-overlay {
-    left: calc(100vw - 435px);
-    width: 435px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    min-height: 100dvh;
-  }
-  .gift-overlay > div {
-    min-width: 100%;
-    background-size: cover;
   }
 }

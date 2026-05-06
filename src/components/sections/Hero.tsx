@@ -22,7 +22,7 @@ export default function HeroSection() {
   }, []);
 
   useEffect(() => {
-    const t = setTimeout(() => setReady(true), 100);
+    const t = setTimeout(() => setReady(true), 0);
     return () => clearTimeout(t);
   }, []);
 

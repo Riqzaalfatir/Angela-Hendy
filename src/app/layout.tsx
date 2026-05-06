@@ -47,6 +47,18 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} ${cylburn.variable} ${notoSans.variable}`}
     >
       <head>
+        {/* Herp */}
+        <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/BungaKiri.svg" />
+  <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/AmplopKotak.svg" />
+  <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/AmplopHD.svg" />
+  <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/Pita.svg" />
+  <link rel="preload" as="image" type="image/webp" href="/images/Hero/AmplopDouble.webp" />
+  <link rel="preload" as="image" type="image/webp" href="/images/Hero/AmplopBunga.webp" />
+  <link rel="preload" as="image" type="image/webp" href="/images/Hero/BungaHD.webp" />
+  <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/FotoCew.svg" />
+  <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/FotoCowo.svg" />
+  <link rel="preload" as="image" type="image/webp" href="/images/Hero/Default.webp" />
+  
         <link rel="preload" as="image" href="/images/Wishes/BungaAtas.svg" />
         <link rel="preload" as="image" href="/images/Wishes/DaunAtas.webp" />
         <link rel="preload" as="image" href="/images/Wishes/DaunBawah.webp" />
