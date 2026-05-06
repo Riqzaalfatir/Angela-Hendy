@@ -10,9 +10,11 @@ const CANVAS_HEIGHT = 843;
 type Props = {
   open: boolean;
   onClose: () => void;
+    onOpenWishes: () => void;  // ← tambah
+
 };
 
-export default function WeddingGift({ open, onClose }: Props) {
+export default function WeddingGift({ open, onClose, onOpenWishes }: Props) {
   const [scale, setScale] = useState(1);
   const [copied, setCopied] = useState(false);
 
@@ -36,7 +38,7 @@ export default function WeddingGift({ open, onClose }: Props) {
   if (!open) return null;
 
   return (
-   <div className="wishes-overlay" onClick={onClose}>
+   <div className="gift-overlay" onClick={onClose}>
   <div
     className="relative w-full"
     style={{

@@ -22,49 +22,51 @@ export default function Home() {
   // Preload dulu sebelum apapun tampil
   if (!loaded) return <LoadingScreen progress={progress} />;
 
-  return (
-    <>
-      {!start && <Opening setStart={setStart} namaTamu="Sela" />}
+ return (
+  <>
+    {!start && <Opening setStart={setStart} namaTamu="Sela" />}
 
-      <div className="desktop-layout">
-        <aside className="cover-panel">
-          <DesktopCover />
-        </aside>
+    {/* Pindah ke luar desktop-layout */}
+    <Wishes
+      open={openWishes}
+      onClose={() => setOpenWishes(false)}
+      onOpenGift={() => { setOpenWishes(false); setOpenGift(true); }}
+    />
+    <WeddingGift
+      open={openGift}
+      onClose={() => setOpenGift(false)}
+      onOpenWishes={() => { setOpenGift(false); setOpenWishes(true); }}
+    />
 
-        <main
-          className="sections-panel"
-          style={{
-            backgroundImage: "url('/images/Hero/Default.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          {start && (
-            <>
-              <Header
-                onOpenWishes={() => setOpenWishes(true)}
-                onOpenGift={() => setOpenGift(true)}
-                onCloseAll={() => { setOpenWishes(false); setOpenGift(false); }}
-              />
-              <Hero />
-              <Countdown />
-              <Venue />
-              <Rsvp onOpenWishes={() => setOpenWishes(true)} />
-              <Wishes
-                open={openWishes}
-                onClose={() => setOpenWishes(false)}
-                onOpenGift={() => { setOpenWishes(false); setOpenGift(true); }}
-              />
-              <WeddingGift
-                open={openGift}
-                onClose={() => setOpenGift(false)}
-              />
-            </>
-          )}
-        </main>
-      </div>
-    </>
-  );
+    <div className="desktop-layout">
+      <aside className="cover-panel">
+        <DesktopCover />
+      </aside>
+      <main
+        className="sections-panel"
+        style={{
+          backgroundImage: "url('/images/Hero/Default.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {start && (
+          <>
+            <Header
+              onOpenWishes={() => { setOpenGift(false); setOpenWishes(true); }}
+              onOpenGift={() => { setOpenWishes(false); setOpenGift(true); }}
+              onCloseAll={() => { setOpenWishes(false); setOpenGift(false); }}
+            />
+            <Hero />
+            <Countdown />
+            <Venue />
+            <Rsvp onOpenWishes={() => { setOpenGift(false); setOpenWishes(true); }} />
+          </>
+        )}
+      </main>
+    </div>
+  </>
+);
 }
 // "use client";
 

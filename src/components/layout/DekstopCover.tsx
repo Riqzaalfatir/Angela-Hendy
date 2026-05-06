@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import Animate from"@/components/ui/FadeIn"
 
 const DesktopCover = () => {
   return (
-    <div
+    <div id="desktop-cover"
       className="relative w-full overflow-y-auto  no-scrollbar"
       style={{ minHeight: "1020px", height: "100dvh" }}
     >
@@ -15,7 +16,7 @@ const DesktopCover = () => {
         className="object-cover object-top"
       />
 
-      <div className="absolute inset-0 flex flex-col justify-end items-center text-white text-center px-10 pb-[5%] tracking-wide">
+      <div className="cover-text absolute inset-0 flex flex-col justify-end items-center text-white text-center px-10 pb-[5%] tracking-wide">
 
           <p className="font-garamond text-[20px] text-white uppercase">
             The Wedding of

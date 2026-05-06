@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-
+import FadeUp from "@/components/ui/FadeUp";
 
 const CANVAS_WIDTH = 390;
 const COUNTDOWN_OVERLAP = 25;
@@ -49,15 +49,15 @@ export default function Countdown() {
   const { days, hours, minutes, seconds } = useCountdown();
 
   useEffect(() => {
-  const updateScale = () => {
-    const panel = document.querySelector('.sections-panel') as HTMLElement;
-    const containerWidth = panel ? panel.offsetWidth : window.innerWidth;
-    setScale(containerWidth / CANVAS_WIDTH);
-  };
-  updateScale();
-  window.addEventListener("resize", updateScale);
-  return () => window.removeEventListener("resize", updateScale);
-}, []);
+    const updateScale = () => {
+      const panel = document.querySelector('.sections-panel') as HTMLElement;
+      const containerWidth = panel ? panel.offsetWidth : window.innerWidth;
+      setScale(containerWidth / CANVAS_WIDTH);
+    };
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
 
   const ovalLeft = [53, 134, 215, 296];
   const labels = ["Days", "Hours", "Minutes", "Seconds"];
@@ -92,86 +92,104 @@ export default function Countdown() {
         }}
       >
         <Image
-                  src="/images/Countdown/BungaKiri.svg"
-                  alt=""
-                  width={175}
-                  height={175}
-                  className="absolute z-0"
-                  style={{ top: -75, left: -5 }}
-                />
+          src="/images/Countdown/BungaKiri.svg"
+          alt=""
+          width={175}
+          height={175}
+          className="absolute z-0"
+          style={{ top: -75, left: -5 }}
+        />
 
         <Image
-                  src="/images/Countdown/BungaKana.svg"
-                  alt=""
-                  width={250}
-                  height={250}
-                  className="absolute z-0"
-                  style={{ bottom: -230, right: -5 }}
-                />
+          src="/images/Countdown/BungaKana.svg"
+          alt=""
+          width={250}
+          height={250}
+          className="absolute z-0"
+          style={{ bottom: -230, right: -5 }}
+        />
 
         {/* Cordially */}
-        <p className="absolute w-full text-center text-white z-10"
-          style={{ top: topBase, fontFamily: "EB Garamond, serif", fontSize: 14, lineHeight: "20px" }}>
-          Cordially request the honour of your presence at<br />
-          the marriage of their son and daughter
-        </p>
+        <FadeUp delay={0}>
+          <p className="absolute w-full text-center text-white z-10"
+            style={{ top: topBase, fontFamily: "EB Garamond, serif", fontSize: 14, lineHeight: "20px" }}>
+            Cordially request the honour of your presence at<br />
+            the marriage of their son and daughter
+          </p>
+        </FadeUp>
 
         {/* Hendy */}
-        <p className="absolute w-full text-center text-white z-10"
-          style={{ top: hendyTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}>
-          Hendy Sudjono, S.AB.
-        </p>
+        <FadeUp delay={0.2}>
+          <p className="absolute w-full text-center text-white z-10"
+            style={{ top: hendyTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}>
+            Hendy Sudjono, S.AB.
+          </p>
+        </FadeUp>
 
         {/* & */}
-        <p className="absolute w-full text-center text-white z-10"
-          style={{ top: andTop, fontFamily: "Cylburn, cursive", fontSize: 36 }}>
-          &amp;
-        </p>
+        <FadeUp delay={0.4}>
+          <p className="absolute w-full text-center text-white z-10"
+            style={{ top: andTop, fontFamily: "Cylburn, cursive", fontSize: 36 }}>
+            &amp;
+          </p>
+        </FadeUp>
 
         {/* Angele */}
-        <p className="absolute w-full text-center text-white z-10"
-          style={{ top: angeleTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}>
-          Angele Tantiana, B.Bus.
-        </p>
+        <FadeUp delay={0.6}>
+          <p className="absolute w-full text-center text-white z-10"
+            style={{ top: angeleTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}>
+            Angele Tantiana, B.Bus.
+          </p>
+        </FadeUp>
 
         {/* Joy */}
-        <p className="absolute w-full text-center text-white z-10"
-          style={{ top: joyTop, fontFamily: "EB Garamond, serif", fontSize: 14, lineHeight: "20px" }}>
-          Our joy will be complete with<br />
-          your presence and blessings.
-        </p>
+        <FadeUp delay={0.8}>
+          <p className="absolute w-full text-center text-white z-10"
+            style={{ top: joyTop, fontFamily: "EB Garamond, serif", fontSize: 14, lineHeight: "20px" }}>
+            Our joy will be complete with<br />
+            your presence and blessings.
+          </p>
+        </FadeUp>
 
         {/* Date */}
-        <p className="absolute w-full text-center text-white uppercase z-10"
-          style={{ top: dateTop, fontFamily: "EB Garamond, serif", fontSize: 24 }}>
-          Saturday, 23 May 2026
-        </p>
+        <FadeUp delay={1.0}>
+          <p className="absolute w-full text-center text-white uppercase z-10"
+            style={{ top: dateTop, fontFamily: "EB Garamond, serif", fontSize: 24 }}>
+            Saturday, 23 May 2026
+          </p>
+        </FadeUp>
 
         {/* Ovals */}
-        <div className="absolute z-10" style={{ top: ovalTop, width: "100%", height: 100 }}>
-          {values.map((val, i) => (
-            <OvalUnit key={labels[i]} value={val} label={labels[i]} left={ovalLeft[i]} />
-          ))}
-        </div>
+        <FadeUp delay={1.2}>
+          <div className="absolute z-10" style={{ top: ovalTop, width: "100%", height: 100 }}>
+            {values.map((val, i) => (
+              <OvalUnit key={labels[i]} value={val} label={labels[i]} left={ovalLeft[i]} />
+            ))}
+          </div>
+        </FadeUp>
 
         {/* Button */}
-       <div 
-  className="absolute flex items-center justify-center bg-white border border-white rounded-full"
-  style={{
-    top: buttonTop,
-    left: "50%",
-    transform: "translateX(-50%)",
-    width: 160,
-    height: 30,
-  }}
->
-  <a   href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Hendy+%26+Angele&dates=20260523T000000Z/20260523T235959Z&details=Wedding+of+Hendy+Sudjono+%26+Angele+Tantiana"
-  target="_blank"
-  rel="noopener noreferrer" 
-  className="text-[#670C0F] text-[12px] font-serif">
-    MARK YOUR CALENDAR
-  </a>
-</div>
+        <FadeUp delay={1.4}>
+          <div
+            className="absolute flex items-center justify-center bg-white border border-white rounded-full"
+            style={{
+              top: buttonTop,
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: 160,
+              height: 30,
+            }}
+          >
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Hendy+%26+Angele&dates=20260523T000000Z/20260523T235959Z&details=Wedding+of+Hendy+Sudjono+%26+Angele+Tantiana"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#670C0F] text-[12px] font-serif">
+              MARK YOUR CALENDAR
+            </a>
+          </div>
+        </FadeUp>
+
       </div>
     </div>
   );
