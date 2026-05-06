@@ -147,8 +147,7 @@ a {
   scrollbar-width: none;
 }
 
-/* ─── Animasi ─── */
-/* #opening img,
+#opening img,
 #hero img,
 #desktop-cover .cover-text,
 #wishes img,
@@ -165,30 +164,5 @@ a {
     opacity: 1;
     transform: scale(1);
   }
-} */
-
-#opening img,
-#wishes img,
-#gift img,
-#desktop-cover .cover-text {
-  animation: fadeInScale 1.2s ease-in-out both;
 }
 
-@keyframes fadeInScale {
-  from { opacity: 0; transform: scale(0.98); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-/* ✅ Hero: animasi di PARENT, bukan tiap img */
-/* 1 elemen animasi = 1 layer = smooth di mobile */
-#hero {
-  animation: fadeInOpacity 0.9s ease-out both;
-}
-
-/* ❌ Hapus ini — jangan animasi tiap img */
-/* #hero img { animation: fadeInOpacity ... } */
-
-@keyframes fadeInOpacity {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
