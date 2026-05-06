@@ -82,7 +82,7 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
               className="relative z-20 flex flex-col items-center mx-auto h-full"
               style={{
                 width: s(72.82, 284),
-                paddingTop: s(8, 31),
+                paddingTop: s(8, 90),
                 paddingBottom: s(6, 23),
                 gap: s(3, 12),
               }}
@@ -101,7 +101,7 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
                 value={nama}
                 placeholder="Desy (Tester)"
                 onChange={(e) => setNama(e.target.value)}
-                className="w-full flex-shrink-0 text-white font-garamond border bg-transparent border-white rounded-full outline-none placeholder:text-white/50"
+                className="w-full flex-shrink-0 text-white font-garamond border bg-transparent border-white rounded-full outline-none placeholder:text-white/50 lg:mt-4"
                 style={{
                   fontSize: s(3.08, 12),
                   height: s(8.46, 33),
@@ -139,7 +139,7 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
 
               {/* LIST PESAN — flex-1 mengisi sisa ruang */}
               <div
-                className={`w-full flex-1 min-h-0 lg:min-h-[263px] ${
+                className={`w-full flex-1 min-h-0 max-h-[263px] ${
                   !showAll ? "bg-white rounded-2xl overflow-y-auto" : ""
                 }`}
               >
@@ -285,7 +285,7 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
               {/* Tombol Gift */}
               <button
                 onClick={onOpenGift}
-                className="font-cylburn text-[#F0E8D9] text-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0"
+                className="font-cylburn text-[#F0E8D9] text-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 pt-4"
                 style={{ fontSize: s(8.21, 32) }}
               >
                 Click to Wedding Gift
