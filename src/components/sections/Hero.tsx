@@ -1,26 +1,32 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";  // ← useLayoutEffect, bukan useEffect
 import Image from "next/image";
 
 const CANVAS_WIDTH = 390;
 const CANVAS_HEIGHT = 843.56;
 
 export default function HeroSection() {
-  const [scale, setScale] = useState(1);
+  const [scale, setScale] = useState<number | null>(null); // null = belum dihitung
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    // Jalan SEBELUM browser paint — tidak ada layout jump
     const updateScale = () => {
       const panel = document.querySelector(".sections-panel") as HTMLElement;
       const containerWidth = panel ? panel.offsetWidth : window.innerWidth;
       setScale(containerWidth / CANVAS_WIDTH);
     };
 
-    // Jalankan langsung, tanpa setTimeout
     updateScale();
     window.addEventListener("resize", updateScale);
     return () => window.removeEventListener("resize", updateScale);
   }, []);
+
+  // Sembunyikan sampai scale siap — tidak akan ada stuck karena
+  // Opening masih menutupi layar saat ini
+  if (scale === null) return (
+    <div style={{ height: `${CANVAS_HEIGHT}px` }} />
+  );
 
   return (
     <div
@@ -34,19 +40,17 @@ export default function HeroSection() {
           width: `${CANVAS_WIDTH}px`,
           height: `${CANVAS_HEIGHT}px`,
           transform: `scale(${scale})`,
-          // ✅ Promote ke GPU layer sendiri agar animasi child tidak bentrok
           willChange: "transform",
         }}
       >
-        {/* z-0 — BungaKiri */}
         <Image priority src="/images/Hero/BungaKiri.svg" alt=""
-          width={270} height={220} className="absolute z-0" style={{ top: 0, left: 0 }} />
+          width={270} height={220} className="absolute z-0"
+          style={{ top: 0, left: 0 }} />
 
-        {/* AmplopKotak */}
         <Image priority src="/images/Hero/AmplopKotak.svg" alt=""
-          width={189} height={235} className="absolute z-50" style={{ top: 220, left: 170 }} />
+          width={189} height={235} className="absolute z-50"
+          style={{ top: 220, left: 170 }} />
 
-        {/* Teks di atas AmplopKotak */}
         <div
           className="absolute z-[55] flex flex-col items-center justify-center text-center"
           style={{ top: 220, left: 170, width: 189, height: 235 }}
@@ -64,68 +68,64 @@ export default function HeroSection() {
           </p>
         </div>
 
-        {/* Pita kiri (belakang amplop) */}
         <Image priority src="/images/Hero/Pita.svg" alt=""
           width={107} height={311} className="absolute z-40"
           style={{ top: 119, left: 253, clipPath: "inset(0 50% 0 0)" }} />
 
-        {/* Amplop BAWAH */}
         <Image priority src="/images/Hero/AmplopHD.svg" alt=""
-          width={279} height={302} className="absolute z-20" style={{ top: 55, left: 46 }} />
+          width={279} height={302} className="absolute z-20"
+          style={{ top: 55, left: 46 }} />
 
-        {/* Foto Cewe */}
         <Image priority src="/images/Hero/FotoCew.svg" alt="Foto pengantin wanita"
-          width={115} height={103} className="absolute z-30" style={{ top: 105, left: 90 }} />
+          width={115} height={103} className="absolute z-30"
+          style={{ top: 105, left: 90 }} />
         <Image priority src="/images/Hero/Cover.svg" alt="Foto pengantin wanita"
-          width={112} height={107} className="absolute z-30" style={{ top: 109, left: 92 }} />
+          width={112} height={107} className="absolute z-30"
+          style={{ top: 109, left: 92 }} />
 
-        {/* Foto Cowo */}
         <Image priority src="/images/Hero/FotoCowo.svg" alt="Foto pengantin pria"
-          width={140} height={140} className="absolute z-[35]" style={{ top: 125, left: 160 }} />
+          width={140} height={140} className="absolute z-[35]"
+          style={{ top: 125, left: 160 }} />
         <Image priority src="/images/Hero/CoverKanan.svg" alt="Foto pengantin pria"
-          width={90} height={100} className="absolute z-[35]" style={{ top: 125, left: 185 }} />
+          width={90} height={100} className="absolute z-[35]"
+          style={{ top: 125, left: 185 }} />
 
-        {/* AmplopDouble */}
         <Image priority src="/images/Hero/AmplopDouble.webp" alt=""
-          width={275} height={186} className="absolute z-[37]" style={{ top: 135, left: 55 }} />
+          width={275} height={186} className="absolute z-[37]"
+          style={{ top: 135, left: 55 }} />
 
-        {/* AmplopBunga */}
         <Image priority src="/images/Hero/AmplopBunga.webp" alt=""
-          width={255} height={280} className="absolute z-30" style={{ top: 300, left: 20 }} />
+          width={255} height={280} className="absolute z-30"
+          style={{ top: 300, left: 20 }} />
 
-        {/* Teks di atas AmplopBunga */}
         <div
           className="absolute z-[35] flex flex-col justify-center"
           style={{ top: 320, left: 29, width: 245, height: 280, paddingLeft: 80 }}
         >
           <p className="font-garamond text-[#7C1419] leading-snug text-[9px]">
-            So they no onger two,<br />
-            but one flesh.
+            So they no onger two,<br />but one flesh.
           </p>
           <p className="font-garamond text-[#7C1419] leading-snug text-[9px] mt-2">
-            Therefore what God<br />
-            has joined together, let no one separate
+            Therefore what God<br />has joined together, let no one separate
           </p>
           <p className="font-garamond text-[#7C1419] italic text-[9px] mt-3 pl-11">
             Matthew 19:6
           </p>
         </div>
 
-        {/* Bunga Center */}
         <Image priority src="/images/Hero/BungaHD.webp" alt=""
-          width={180} height={175} className="absolute z-50" style={{ top: 248, left: 41 }} />
+          width={180} height={175} className="absolute z-50"
+          style={{ top: 248, left: 41 }} />
 
-        {/* Pita kanan */}
         <Image priority src="/images/Hero/Pita.svg" alt=""
           width={107} height={311} className="absolute z-[90]"
           style={{ top: 119, left: 252, clipPath: "inset(0 0 0 50%)" }} />
 
-        {/* BungaKanan */}
         <Image priority src="/images/Countdown/BungaKanan.svg" alt=""
-          width={215} height={220} className="absolute z-0" style={{ bottom: 37, right: -13 }} />
+          width={215} height={220} className="absolute z-0"
+          style={{ bottom: 37, right: -13 }} />
 
-        {/* Teks bawah */}
-        <div className="absolute w-full text-center px-4 z-50" style={{ top: 615, color: "#F5E6C8" }}>
+        <div className="absolute w-full text-center px-4 z-50" style={{ top: 615 }}>
           <p className="font-garamond text-[14px] text-white">By the Grace of God</p>
           <p className="font-garamond text-[14px] text-white mt-[26px]">
             MR. SUDJONO NIATAMIDJAJA and <br />MRS. LIANA SUTANTO

@@ -396,7 +396,7 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
     <>
       <div className="wishes-overlay" onClick={onClose}>
         <div
-          style={{ width: "100%", height: "100dvh" }}
+          style={{ width: "100%", minHeight: "100dvh" }}
           className="no-scrollbar"
           onClick={(e) => e.stopPropagation()}
         >
