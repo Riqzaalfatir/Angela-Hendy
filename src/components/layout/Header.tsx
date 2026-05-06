@@ -101,7 +101,7 @@ const Header = ({ onOpenWishes, onOpenGift, onCloseAll }: Props): React.ReactEle
               variants={container}
               initial="hidden"
               animate="show"
-              className="pt-3.5 pl-3 space-y-1 text-[12px] font-noto tracking-[0.2em] text-white font-medium flex flex-col"
+              className="pt-3.5 pl-3 space-y-1.5 text-[12px] font-noto tracking-[0.2em] text-white font-medium flex flex-col"
             >
               {linkMenu.map((menu) => (
                 <motion.a

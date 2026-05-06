@@ -5,8 +5,7 @@ import Animate from"@/components/ui/FadeIn"
 const DesktopCover = () => {
   return (
     <div id="desktop-cover"
-      className="relative w-full overflow-y-auto  no-scrollbar"
-      style={{ minHeight: "1020px", height: "100dvh" }}
+      className="relative w-full overflow-y-auto h-screen  no-scrollbar"
     >
       <Image
         src="/images/Cover/Cover.webp"

@@ -38,7 +38,7 @@ const OvalUnit = ({ value, label, left }: { value: number; label: string; left: 
     <span style={{ fontFamily: "EB Garamond, serif", fontSize: 48, lineHeight: "25px", color: "#7C1419" }}>
       {String(value).padStart(2, "0")}
     </span>
-    <span style={{ fontFamily: "EB Garamond, serif", fontSize: 8, marginTop: 12, color: "#7C1419" }}>
+    <span style={{ fontFamily: "EB Garamond, serif", fontSize: 8, marginTop: 8, color: "#7C1419" }}>
       {label}
     </span>
   </div>
@@ -160,13 +160,25 @@ export default function Countdown() {
         </FadeUp>
 
         {/* Ovals */}
-        <FadeUp delay={1.2}>
-          <div className="absolute z-10" style={{ top: ovalTop, width: "100%", height: 100 }}>
-            {values.map((val, i) => (
-              <OvalUnit key={labels[i]} value={val} label={labels[i]} left={ovalLeft[i]} />
-            ))}
-          </div>
-        </FadeUp>
+        {/* Ovals */}
+<FadeUp delay={1.2}>
+  <div className="absolute z-10 flex justify-center gap-4" style={{ top: ovalTop, width: "100%" }}>
+    {values.map((val, i) => (
+      <div
+        key={labels[i]}
+        className="flex flex-col items-center justify-center"
+        style={{ width: 60.82, height: 100, borderRadius: "50%", backgroundColor: "#FFFFFF" }}
+      >
+        <span style={{ fontFamily: "EB Garamond, serif", fontSize: 36, lineHeight: "25px", color: "#7C1419" }}>
+          {String(val).padStart(2, "0")}
+        </span>
+        <span style={{ fontFamily: "EB Garamond, serif", fontSize: 8, marginTop: 7, color: "#7C1419" }}>
+          {labels[i]}
+        </span>
+      </div>
+    ))}
+  </div>
+</FadeUp>
 
         {/* Button */}
         <FadeUp delay={1.4}>

@@ -25,7 +25,7 @@ const Venue = () => {
   const grandBallroomTop = imageTop + 310;
   const addressTop       = grandBallroomTop + 62 + 17;
   const holyTop          = addressTop + 20 + 68;
-  const receptionTop     = holyTop + 74 + 30;
+  const receptionTop     = holyTop + 74 + 40;
   const ovalTop          = receptionTop + 74 + 63;
   const CANVAS_HEIGHT    = ovalTop + 460 + 60;
 
@@ -49,7 +49,7 @@ const Venue = () => {
           width={318}
           height={318}
           className="absolute z-0"
-          style={{ bottom: 270, left: 0 }}
+          style={{ bottom: 260, left: 0 }}
         />
 
         {/* Judul Venue */}
