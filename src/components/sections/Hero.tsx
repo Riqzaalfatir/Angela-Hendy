@@ -123,6 +123,16 @@ export default function HeroSection() {
             style={{ top: 105, left: 90 }}
           />
 
+          <Image
+            priority
+            src="/images/Hero/Cover.svg"
+            alt="Foto pengantin wanita"
+            width={112}
+            height={107}
+            className="absolute z-30"
+            style={{ top: 109, left: 92 }}
+          />
+
         {/* Foto Cowo */}
           <Image
             priority
@@ -132,6 +142,15 @@ export default function HeroSection() {
             height={140}
             className="absolute z-[35]"
             style={{ top: 125, left: 160 }}
+          />
+          <Image
+            priority
+            src="/images/Hero/CoverKanan.svg"
+            alt="Foto pengantin pria"
+            width={90}
+            height={100}
+            className="absolute z-[35]"
+            style={{ top: 125, left: 185 }}
           />
 
         {/* AmplopDouble (nutupin bawah foto) */}
