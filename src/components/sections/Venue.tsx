@@ -61,7 +61,7 @@ const Venue = () => {
         />
 
         {/* Judul "Venue" */}
-        <FadeIn delay={0}>
+        <FadeIn delay={0.2}>
           <p
             className="absolute w-full text-center text-white z-10"
             style={{ top: venueTop, fontFamily: "Cylburn, cursive", fontSize: 96, lineHeight: "96px" }}
@@ -71,7 +71,7 @@ const Venue = () => {
         </FadeIn>
 
         {/* Foto ruangan + tombol Google Maps */}
-        <FadeIn delay={0.4}>
+        <FadeIn delay={0.6}>
           <div
             className="absolute bg-white z-10"
             style={{
@@ -115,7 +115,7 @@ const Venue = () => {
         </FadeIn>
 
         {/* Nama venue */}
-        <FadeIn delay={0.8}>
+        <FadeIn delay={1}>
           <p
             className="absolute w-full text-center text-white z-10"
             style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38, lineHeight: "31px" }}
@@ -126,7 +126,7 @@ const Venue = () => {
         </FadeIn>
 
         {/* Alamat venue */}
-        <FadeIn delay={1.2}>
+        <FadeIn delay={1.4}>
           <p
             className="absolute w-full text-center text-white z-10"
             style={{ top: addressTop, fontFamily: "EB Garamond, serif", fontSize: 14, lineHeight: "20px" }}
@@ -136,7 +136,7 @@ const Venue = () => {
         </FadeIn>
 
         {/* Sesi Holy Matrimony */}
-        <FadeIn delay={1.6}>
+        <FadeIn delay={1.8}>
           <p
             className="absolute w-full text-center text-white z-10"
             style={{ top: holyTop, fontFamily: "Cylburn, cursive", fontSize: 48, lineHeight: "48px" }}
@@ -149,7 +149,7 @@ const Venue = () => {
         </FadeIn>
 
         {/* Sesi Wedding Reception */}
-        <FadeIn delay={2}>
+        <FadeIn delay={2.2}>
           <p
             className="absolute w-full text-center text-white z-10"
             style={{ top: receptionTop, fontFamily: "Cylburn, cursive", fontSize: 48, lineHeight: "48px" }}
@@ -162,7 +162,7 @@ const Venue = () => {
         </FadeIn>
 
         {/* Foto pengantin bentuk oval */}
-        <FadeIn delay={2.4}>
+        <FadeIn delay={2.6}>
           <div
             className="absolute overflow-hidden z-20"
             style={{
