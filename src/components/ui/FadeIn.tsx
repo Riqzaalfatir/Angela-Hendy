@@ -1,29 +1,4 @@
-// // components/FadeIn.tsx
-// "use client";
-// import { motion } from "framer-motion";
-
-// export default function FadeIn({
-//   children,
-//   delay = 0,
-//   duration = 1.2,
-//   className = "",
-// }: {
-//   children: React.ReactNode;
-//   delay?: number;
-//   duration?: number;
-//   className?: string;
-// }) {
-//   return (
-//     <motion.div
-//       initial={{ opacity: 0, scale: 0.98 }}
-//       animate={{ opacity: 1, scale: 1 }}
-//       transition={{ duration, delay, ease: "easeInOut" }}
-//       className={className}
-//     >
-//       {children}
-//     </motion.div>
-//   );
-// }
+// ANIMASI FADEUP
 
 "use client";
 
@@ -51,8 +26,8 @@ export default function FadeIn({
           setShow(false);
         }
       },
-      { threshold: 0.8, // 0.15
-        rootMargin: "0px 0px -10% 0px" // animasi baru mulai kalau elemen sudah 10% dari bawah viewport
+      { threshold: 0.8, 
+        rootMargin: "0px 0px -10% 0px" 
 
        }
       

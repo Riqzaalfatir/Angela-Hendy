@@ -10,15 +10,15 @@ export default function Footer() {
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
-  const updateScale = () => {
-    const isMobile = window.innerWidth < 1024;
-    const containerWidth = isMobile ? window.innerWidth : 435;
-    setScale(containerWidth / CANVAS_WIDTH);
-  };
-  updateScale();
-  window.addEventListener("resize", updateScale);
-  return () => window.removeEventListener("resize", updateScale);
-}, []);
+    const updateScale = () => {
+      const isMobile = window.innerWidth < 1024;
+      const containerWidth = isMobile ? window.innerWidth : 435;
+      setScale(containerWidth / CANVAS_WIDTH);
+    };
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
 
   return (
     <div
@@ -45,7 +45,7 @@ export default function Footer() {
         {/* LOGO HA — top: 90px, left: 162px */}
         <div
           className="absolute z-10 inset-x-0 flex justify-center"
-  style={{ top: 90 }}
+          style={{ top: 90 }}
         >
           <Image
             src="/images/Footer/LogoHA.svg"
@@ -57,37 +57,40 @@ export default function Footer() {
         </div>
 
         {/* LOGO PROVITE — top: 756px, left: 150px */}
-       {/* LOGOS BOTTOM */}
-<div
-  className="absolute z-10 flex items-center justify-between px-[62px]"
-  style={{ top: 756, width: "100%" }}
->
-  <div className="flex flex-col items-center gap-[7] leading-none -mt-3.5">
-    <p className="font-garamond text-[11px] text-white">Specially Design by</p>
-    <Image
-      src="/images/Footer/LogoPeletin.svg"
-      alt="Peletin Logo"
-      width={79}
-      height={65}
-      className="object-contain"
-    />
-  </div>
+        {/* LOGOS BOTTOM */}
+        <div
+          className="absolute z-10 flex items-center justify-between px-[62px]"
+          style={{ top: 756, width: "100%" }}
+        >
+          <div className="flex flex-col items-center gap-[7] leading-none -mt-3.5">
+            <p className="font-garamond text-[11px] text-white">
+              Specially Design by
+            </p>
+            <Image
+              src="/images/Footer/LogoPeletin.svg"
+              alt="Peletin Logo"
+              width={79}
+              height={65}
+              className="object-contain"
+            />
+          </div>
 
-  <div className="flex flex-col items-center  leading-none">
-  <p className="font-garamond text-[11px] text-white">Reservation System by</p>
-  <div className="overflow-hidden" style={{ marginTop: 0.5 }}>
-    <Image
-      src="/images/Footer/LogoProvite.svg"
-      alt="Provite Logo"
-      width={89}
-      height={65}
-      className="object-contain"
-      style={{ marginTop: -9  }} 
-    />
-  </div>
-</div>
-</div>
-
+          <div className="flex flex-col items-center  leading-none">
+            <p className="font-garamond text-[11px] text-white">
+              Reservation System by
+            </p>
+            <div className="overflow-hidden" style={{ marginTop: 0.5 }}>
+              <Image
+                src="/images/Footer/LogoProvite.svg"
+                alt="Provite Logo"
+                width={89}
+                height={65}
+                className="object-contain"
+                style={{ marginTop: -9 }}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
