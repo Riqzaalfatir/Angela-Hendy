@@ -187,7 +187,7 @@ useEffect(() => {
         {/* Oval countdown */}
         <div className="absolute z-10 flex justify-center gap-4" style={{ top: ovalTop, width: "100%" }}>
   {values.map((val, i) => (
-    <FadeIn key={labels[i]} delay={1 + i * 0.3}>
+    <FadeIn key={labels[i]} delay={0.7 + i * 0.3}>
       <div
         className="flex flex-col items-center justify-center"
         style={{ width: 60.82, height: 100, borderRadius: "50%", backgroundColor: "#FFFFFF" }}
@@ -204,9 +204,9 @@ useEffect(() => {
 </div>
 
         {/* Tombol Mark Your Calendar */}
-        <FadeIn delay={3.4}>
+        <FadeIn delay={3.5}>
           <div
-            className="absolute flex items-center justify-center bg-white border border-white rounded-full"
+            className="absolute flex items-center justify-center bg-white  border border-white rounded-full"
             style={{
               top: buttonTop,
               left: "50%",
@@ -219,7 +219,7 @@ useEffect(() => {
               href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Hendy+%26+Angele&dates=20260523T000000Z/20260523T235959Z&details=Wedding+of+Hendy+Sudjono+%26+Angele+Tantiana"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#670C0F] text-[12px] font-serif">
+              className="text-[#670C0F]  text-[12px] font-serif">
               MARK YOUR CALENDAR
             </a>
           </div>

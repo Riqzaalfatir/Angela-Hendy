@@ -111,7 +111,7 @@ const Venue = () => {
                 GOOGLE MAPS
               </a>
             </div>
-          </div>
+            </div>
         </FadeIn>
 
         {/* Nama venue */}

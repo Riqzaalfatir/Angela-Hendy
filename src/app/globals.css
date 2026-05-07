@@ -170,7 +170,7 @@ a {
 .hero-aset-7 { animation: fadeIn 1.2s ease-in-out both; animation-delay: 0.6s; }
 .hero-aset-8 { animation: fadeIn 1.2s ease-in-out both; animation-delay: 0.8s; }
 
-/* @keyframes fadeIn {
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: scale(0.98);
@@ -180,6 +180,7 @@ a {
     transform: scale(1);
   }
 }
+
 
 #wishes {
   -webkit-overflow-scrolling: auto; 
@@ -204,4 +205,4 @@ a {
   .delay-12 { animation-delay: 1.2s; }
   .delay-14 { animation-delay: 1.4s; }
   .delay-16 { animation-delay: 1.6s; }
-} */
+}
