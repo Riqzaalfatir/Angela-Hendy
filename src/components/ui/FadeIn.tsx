@@ -51,7 +51,11 @@ export default function FadeIn({
           setShow(false);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15,
+        rootMargin: "0px 0px -10% 0px" // animasi baru mulai kalau elemen sudah 10% dari bawah viewport
+
+       }
+      
     );
 
     if (ref.current) observer.observe(ref.current);

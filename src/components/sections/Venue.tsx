@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import FadeUp from "@/components/ui/FadeUp";
+import FadeIn from "../ui/FadeIn";
+
 
 // Konstanta 
 const CANVAS_WIDTH = 390;
@@ -59,17 +61,17 @@ const Venue = () => {
         />
 
         {/* Judul "Venue" */}
-        <FadeUp delay={0}>
+        <FadeIn delay={0}>
           <p
             className="absolute w-full text-center text-white z-10"
             style={{ top: venueTop, fontFamily: "Cylburn, cursive", fontSize: 96, lineHeight: "96px" }}
           >
             Venue
           </p>
-        </FadeUp>
+        </FadeIn>
 
         {/* Foto ruangan + tombol Google Maps */}
-        <FadeUp delay={0.2}>
+        <FadeIn delay={0.4}>
           <div
             className="absolute bg-white z-10"
             style={{
@@ -110,10 +112,10 @@ const Venue = () => {
               </a>
             </div>
           </div>
-        </FadeUp>
+        </FadeIn>
 
         {/* Nama venue */}
-        <FadeUp delay={0.4}>
+        <FadeIn delay={0.8}>
           <p
             className="absolute w-full text-center text-white z-10"
             style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38, lineHeight: "31px" }}
@@ -121,20 +123,20 @@ const Venue = () => {
             Grand Ballroom<br />
             <span className="text-[30px]">Pullman Bandung Grand Central</span>
           </p>
-        </FadeUp>
+        </FadeIn>
 
         {/* Alamat venue */}
-        <FadeUp delay={0.6}>
+        <FadeIn delay={1.2}>
           <p
             className="absolute w-full text-center text-white z-10"
             style={{ top: addressTop, fontFamily: "EB Garamond, serif", fontSize: 14, lineHeight: "20px" }}
           >
             Jl. Diponegoro No.27, Bandung
           </p>
-        </FadeUp>
+        </FadeIn>
 
         {/* Sesi Holy Matrimony */}
-        <FadeUp delay={0.8}>
+        <FadeIn delay={1.6}>
           <p
             className="absolute w-full text-center text-white z-10"
             style={{ top: holyTop, fontFamily: "Cylburn, cursive", fontSize: 48, lineHeight: "48px" }}
@@ -144,10 +146,10 @@ const Venue = () => {
               at 11.00 AM
             </span>
           </p>
-        </FadeUp>
+        </FadeIn>
 
         {/* Sesi Wedding Reception */}
-        <FadeUp delay={1.0}>
+        <FadeIn delay={2}>
           <p
             className="absolute w-full text-center text-white z-10"
             style={{ top: receptionTop, fontFamily: "Cylburn, cursive", fontSize: 48, lineHeight: "48px" }}
@@ -157,10 +159,10 @@ const Venue = () => {
               at 17.00 PM
             </span>
           </p>
-        </FadeUp>
+        </FadeIn>
 
         {/* Foto pengantin bentuk oval */}
-        <FadeUp delay={1.2}>
+        <FadeIn delay={2.4}>
           <div
             className="absolute overflow-hidden z-20"
             style={{
@@ -179,7 +181,7 @@ const Venue = () => {
               className="object-cover z-2"
             />
           </div>
-        </FadeUp>
+        </FadeIn>
 
       </div>
     </div>

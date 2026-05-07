@@ -6,6 +6,8 @@ import NotifModal, { NotifType } from "@/components/popup/NotifModal";
 import FadeUp from "@/components/ui/FadeUp";
 import FadeLeft from "@/components/ui/FadeLeft";
 import FadeRight from "@/components/ui/FadeRight";
+import FadeIn from "../ui/FadeIn";
+
 
 // Konstanta 
 const CANVAS_WIDTH = 390;
@@ -136,37 +138,37 @@ const Rsvp = ({ onOpenWishes }: Props) => {
           />
 
           {/* Judul "Rsvp" */}
-          <FadeUp delay={0}>
+          <FadeIn delay={0}>
             <p
               className="absolute w-full text-center text-white z-10 font-cylburn"
               style={{ top: rsvpTop, fontSize: 96, lineHeight: "96px" }}
             >
               Rsvp
             </p>
-          </FadeUp>
+          </FadeIn>
 
           {/* Sapaan tamu */}
-          <FadeUp delay={0.2}>
+          <FadeIn delay={0.2}>
             <p
               className="absolute w-full text-center text-white z-10 font-garamond"
               style={{ top: dearTop, fontSize: 14, lineHeight: "20px" }}
             >
               Dear Mr. / Mrs. /Ms.
             </p>
-          </FadeUp>
+          </FadeIn>
 
           {/* Nama tamu */}
-          <FadeUp delay={0.3}>
+          <FadeIn delay={0.6}>
             <p
               className="absolute w-full text-center text-white z-10 font-cylburn"
               style={{ top: selaTop, fontSize: 46, lineHeight: "46px" }}
             >
               Sela
             </p>
-          </FadeUp>
+          </FadeIn>
 
           {/* Batas konfirmasi kehadiran */}
-          <FadeUp delay={0.4}>
+          <FadeIn delay={1}>
             <p
               className="absolute w-full text-center text-white z-10"
               style={{ top: kindlyTop, fontFamily: "EB Garamond, serif", fontSize: 14, lineHeight: "20px" }}
@@ -176,7 +178,7 @@ const Rsvp = ({ onOpenWishes }: Props) => {
                 23 MAY 2026
               </span>
             </p>
-          </FadeUp>
+          </FadeIn>
 
           {/* Tombol Attend & Unable to Attend */}
           <div
@@ -202,17 +204,17 @@ const Rsvp = ({ onOpenWishes }: Props) => {
           </div>
 
           {/* Teks konfirmasi pilihan */}
-          <FadeUp delay={0.6}>
+          <FadeIn delay={1.4}>
             <p
               className="absolute w-full text-center text-white z-10"
               style={{ top: confirmTextTop, fontFamily: "EB Garamond, serif", fontSize: 14, lineHeight: "20px" }}
             >
               Confirm your selection?
             </p>
-          </FadeUp>
+          </FadeIn>
 
           {/* Tombol Confirm — label berubah sesuai pilihan */}
-          <FadeUp delay={0.7}>
+          <FadeIn delay={1.8}>
             <div
               className="absolute flex justify-center z-10"
               style={{ top: confirmBtnTop, width: CANVAS_WIDTH }}
@@ -237,10 +239,10 @@ const Rsvp = ({ onOpenWishes }: Props) => {
                     : "CONFIRM"}
               </button>
             </div>
-          </FadeUp>
+          </FadeIn>
 
           {/* Teks bantuan support */}
-          <FadeUp delay={0.8}>
+          <FadeIn delay={2.2}>
             <p
               className="absolute w-full text-center text-white z-10"
               style={{ top: supportTextTop, fontFamily: "EB Garamond, serif", fontSize: 12, lineHeight: "18px" }}
@@ -249,10 +251,10 @@ const Rsvp = ({ onOpenWishes }: Props) => {
               <br />
               our support team.
             </p>
-          </FadeUp>
+          </FadeIn>
 
           {/* Tombol Chat Support via WhatsApp */}
-          <FadeUp delay={0.9}>
+          <FadeIn delay={2.6}>
             <div
               className="absolute flex justify-center z-10"
               style={{ top: waTop, width: CANVAS_WIDTH }}
@@ -274,10 +276,10 @@ const Rsvp = ({ onOpenWishes }: Props) => {
                 CHAT SUPPORT
               </a>
             </div>
-          </FadeUp>
+          </FadeIn>
 
           {/* Link ke section Wishes */}
-          <FadeUp delay={1.0}>
+          <FadeIn delay={3}>
             <p
               onClick={onOpenWishes}
               className="absolute w-full text-center z-20 cursor-pointer"
@@ -291,7 +293,7 @@ const Rsvp = ({ onOpenWishes }: Props) => {
             >
               Click to Wishes
             </p>
-          </FadeUp>
+          </FadeIn>
 
         </div>
       </div>
