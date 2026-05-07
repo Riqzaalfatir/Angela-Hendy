@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import FadeUp from "@/components/ui/FadeUp";
 
+// Konstanta 
 const CANVAS_WIDTH = 390;
 
 const Venue = () => {
@@ -20,20 +21,24 @@ const Venue = () => {
     return () => window.removeEventListener("resize", updateScale);
   }, []);
 
-  const venueTop         = 75;
-  const imageTop         = venueTop + 96 + 20;
-  const grandBallroomTop = imageTop + 310;
-  const addressTop       = grandBallroomTop + 62 + 17;
-  const holyTop          = addressTop + 20 + 68;
-  const receptionTop     = holyTop + 74 + 30;
-  const ovalTop          = receptionTop + 74 + 63;
-  const CANVAS_HEIGHT    = ovalTop + 460 + 60;
+  // ─── Posisi vertikal elemen (px, dalam koordinat canvas 390px) ───
+  const venueTop         = 75;                          // judul "Venue"
+  const imageTop         = venueTop + 96 + 20;          // foto ruangan
+  const grandBallroomTop = imageTop + 310;              // nama venue
+  const addressTop       = grandBallroomTop + 62 + 17; // alamat
+  const holyTop          = addressTop + 20 + 68;       // Holy Matrimony
+  const receptionTop     = holyTop + 74 + 30;          // Wedding Reception
+  const ovalTop          = receptionTop + 74 + 63;     // foto oval pengantin
+  const CANVAS_HEIGHT    = ovalTop + 460 + 60;         // total tinggi canvas
 
   return (
-    <div id="venue"
+    <div
+      id="venue"
       className="relative w-full"
       style={{ height: `${CANVAS_HEIGHT * scale}px` }}
     >
+
+      {/* Canvas utama — di-scale dan di-center secara horizontal */}
       <div
         className="absolute top-0 left-1/2 origin-top z-10"
         style={{
@@ -42,7 +47,8 @@ const Venue = () => {
           transform: `translateX(-50%) scale(${scale})`,
         }}
       >
-        {/* Bunga Kiri */}
+        
+        {/* Ornamen bunga kiri tengah */}
         <Image
           src="/images/Venue/BungaKiri.svg"
           alt=""
@@ -52,7 +58,7 @@ const Venue = () => {
           style={{ bottom: 267, left: -6 }}
         />
 
-        {/* Judul Venue */}
+        {/* Judul "Venue" */}
         <FadeUp delay={0}>
           <p
             className="absolute w-full text-center text-white z-10"
@@ -62,7 +68,7 @@ const Venue = () => {
           </p>
         </FadeUp>
 
-        {/* Gambar + Button Google Maps */}
+        {/* Foto ruangan + tombol Google Maps */}
         <FadeUp delay={0.2}>
           <div
             className="absolute bg-white z-10"
@@ -82,7 +88,8 @@ const Venue = () => {
                 className="object-cover"
               />
             </div>
-            
+
+            {/* Tombol Google Maps di atas foto */}
             <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-full flex justify-center">
               <a
                 href="https://maps.app.goo.gl/Su41WKmteCRACRKx5"
@@ -105,7 +112,7 @@ const Venue = () => {
           </div>
         </FadeUp>
 
-        {/* Grand Ballroom */}
+        {/* Nama venue */}
         <FadeUp delay={0.4}>
           <p
             className="absolute w-full text-center text-white z-10"
@@ -116,7 +123,7 @@ const Venue = () => {
           </p>
         </FadeUp>
 
-        {/* Alamat */}
+        {/* Alamat venue */}
         <FadeUp delay={0.6}>
           <p
             className="absolute w-full text-center text-white z-10"
@@ -126,7 +133,7 @@ const Venue = () => {
           </p>
         </FadeUp>
 
-        {/* Holy Matrimony */}
+        {/* Sesi Holy Matrimony */}
         <FadeUp delay={0.8}>
           <p
             className="absolute w-full text-center text-white z-10"
@@ -139,7 +146,7 @@ const Venue = () => {
           </p>
         </FadeUp>
 
-        {/* Wedding Reception */}
+        {/* Sesi Wedding Reception */}
         <FadeUp delay={1.0}>
           <p
             className="absolute w-full text-center text-white z-10"
@@ -152,7 +159,7 @@ const Venue = () => {
           </p>
         </FadeUp>
 
-        {/* Foto Oval */}
+        {/* Foto pengantin bentuk oval */}
         <FadeUp delay={1.2}>
           <div
             className="absolute overflow-hidden z-20"
@@ -180,3 +187,185 @@ const Venue = () => {
 };
 
 export default Venue;
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import Image from "next/image";
+// import FadeUp from "@/components/ui/FadeUp";
+
+// const CANVAS_WIDTH = 390;
+
+// const Venue = () => {
+//   const [scale, setScale] = useState(1);
+
+//   useEffect(() => {
+//     const updateScale = () => {
+//       const panel = document.querySelector('.sections-panel') as HTMLElement;
+//       const containerWidth = panel ? panel.offsetWidth : window.innerWidth;
+//       setScale(containerWidth / CANVAS_WIDTH);
+//     };
+//     updateScale();
+//     window.addEventListener("resize", updateScale);
+//     return () => window.removeEventListener("resize", updateScale);
+//   }, []);
+
+//   const venueTop         = 75;
+//   const imageTop         = venueTop + 96 + 20;
+//   const grandBallroomTop = imageTop + 310;
+//   const addressTop       = grandBallroomTop + 62 + 17;
+//   const holyTop          = addressTop + 20 + 68;
+//   const receptionTop     = holyTop + 74 + 30;
+//   const ovalTop          = receptionTop + 74 + 63;
+//   const CANVAS_HEIGHT    = ovalTop + 460 + 60;
+
+//   return (
+//     <div id="venue"
+//       className="relative w-full"
+//       style={{ height: `${CANVAS_HEIGHT * scale}px` }}
+//     >
+//       <div
+//         className="absolute top-0 left-1/2 origin-top z-10"
+//         style={{
+//           width: CANVAS_WIDTH,
+//           height: CANVAS_HEIGHT,
+//           transform: `translateX(-50%) scale(${scale})`,
+//         }}
+//       >
+//         {/* Bunga Kiri */}
+//         <Image
+//           src="/images/Venue/BungaKiri.svg"
+//           alt=""
+//           width={318}
+//           height={318}
+//           className="absolute z-0"
+//           style={{ bottom: 267, left: -6 }}
+//         />
+
+//         {/* Judul Venue */}
+//         <FadeUp delay={0}>
+//           <p
+//             className="absolute w-full text-center text-white z-10"
+//             style={{ top: venueTop, fontFamily: "Cylburn, cursive", fontSize: 96, lineHeight: "96px" }}
+//           >
+//             Venue
+//           </p>
+//         </FadeUp>
+
+//         {/* Gambar + Button Google Maps */}
+//         <FadeUp delay={0.2}>
+//           <div
+//             className="absolute bg-white z-10"
+//             style={{
+//               top: imageTop,
+//               left: (CANVAS_WIDTH - 182) / 2,
+//               width: 182,
+//               height: 266,
+//               padding: 0.1,
+//             }}
+//           >
+//             <div className="relative w-full h-full">
+//               <Image
+//                 src="/images/Venue/Ruangan.webp"
+//                 alt="Venue"
+//                 fill
+//                 className="object-cover"
+//               />
+//             </div>
+            
+//             <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-full flex justify-center">
+//               <a
+//                 href="https://maps.app.goo.gl/Su41WKmteCRACRKx5"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="flex items-center justify-center bg-white"
+//                 style={{
+//                   width: 160,
+//                   height: 30,
+//                   borderRadius: 58,
+//                   fontFamily: "EB Garamond, serif",
+//                   fontSize: 12,
+//                   color: "#670C0F",
+//                   letterSpacing: 1,
+//                 }}
+//               >
+//                 GOOGLE MAPS
+//               </a>
+//             </div>
+//           </div>
+//         </FadeUp>
+
+//         {/* Grand Ballroom */}
+//         <FadeUp delay={0.4}>
+//           <p
+//             className="absolute w-full text-center text-white z-10"
+//             style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38, lineHeight: "31px" }}
+//           >
+//             Grand Ballroom<br />
+//             <span className="text-[30px]">Pullman Bandung Grand Central</span>
+//           </p>
+//         </FadeUp>
+
+//         {/* Alamat */}
+//         <FadeUp delay={0.6}>
+//           <p
+//             className="absolute w-full text-center text-white z-10"
+//             style={{ top: addressTop, fontFamily: "EB Garamond, serif", fontSize: 14, lineHeight: "20px" }}
+//           >
+//             Jl. Diponegoro No.27, Bandung
+//           </p>
+//         </FadeUp>
+
+//         {/* Holy Matrimony */}
+//         <FadeUp delay={0.8}>
+//           <p
+//             className="absolute w-full text-center text-white z-10"
+//             style={{ top: holyTop, fontFamily: "Cylburn, cursive", fontSize: 48, lineHeight: "48px" }}
+//           >
+//             Holy Matrimony
+//             <span style={{ display: "block", fontFamily: "EB Garamond, serif", fontSize: 18, lineHeight: "26px" }}>
+//               at 11.00 AM
+//             </span>
+//           </p>
+//         </FadeUp>
+
+//         {/* Wedding Reception */}
+//         <FadeUp delay={1.0}>
+//           <p
+//             className="absolute w-full text-center text-white z-10"
+//             style={{ top: receptionTop, fontFamily: "Cylburn, cursive", fontSize: 48, lineHeight: "48px" }}
+//           >
+//             Wedding Reception
+//             <span style={{ display: "block", fontFamily: "EB Garamond, serif", fontSize: 18, lineHeight: "26px" }}>
+//               at 17.00 PM
+//             </span>
+//           </p>
+//         </FadeUp>
+
+//         {/* Foto Oval */}
+//         <FadeUp delay={1.2}>
+//           <div
+//             className="absolute overflow-hidden z-20"
+//             style={{
+//               top: ovalTop,
+//               left: (CANVAS_WIDTH - 302) / 2,
+//               width: 302,
+//               height: 460,
+//               borderRadius: "50%",
+//               border: "2px solid #FFFFFF",
+//             }}
+//           >
+//             <Image
+//               src="/images/Venue/Pengantin.webp"
+//               alt="Foto couple"
+//               fill
+//               className="object-cover z-2"
+//             />
+//           </div>
+//         </FadeUp>
+
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Venue;

@@ -2,8 +2,7 @@
 
 import React, { useEffect } from "react";
 
-// ─── Icon Components ──────────────────────────────────────────────────────────
-
+// ICON COMPONENT 
 const IconCheck: React.FC = () => (
   <img
     src="/images/Popup/TandaCeklisBg.svg"
@@ -28,8 +27,7 @@ const IconQuestion: React.FC = () => (
   />
 );
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
+// TYPE
 type IconKey = "✓" | "!" | "?";
 
 type ButtonVariant = "outline" | "solid" | "whatsapp";
@@ -59,16 +57,14 @@ export type NotifType =
   | "rsvp_unavailable"
   | "rsvp_confirmed_tidak_hadir";
 
-// ─── Icon Map ─────────────────────────────────────────────────────────────────
-
+// ICON MAP
 const ICON_MAP: Record<IconKey, React.ReactElement> = {
   "✓": <IconCheck />,
   "!": <IconWarning />,
   "?": <IconQuestion />,
 };
 
-// ─── Config ───────────────────────────────────────────────────────────────────
-
+// CONFIG
 export const NOTIF_CONFIG: Record<NotifType, NotifConfigItem> = {
   rsvp_closed: {
     icon: "!",
@@ -155,8 +151,7 @@ export const NOTIF_CONFIG: Record<NotifType, NotifConfigItem> = {
   },
 };
 
-// ─── WA Icon ──────────────────────────────────────────────────────────────────
-
+// ICON WA
 const WaIcon: React.FC = () => (
   <svg
     width="14"
@@ -169,8 +164,7 @@ const WaIcon: React.FC = () => (
   </svg>
 );
 
-// ─── Main Component ───────────────────────────────────────────────────────────
-
+// MAIN COMPONENT
 interface NotifModalProps {
   type: NotifType | null;
   onClose: () => void;
@@ -237,6 +231,8 @@ const NotifModal: React.FC<NotifModalProps> = ({
             {config.messageen}
           </p>
         </div>
+
+        
 
         {/* CONTENT BAWAH */}
 

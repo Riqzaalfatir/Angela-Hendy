@@ -84,6 +84,8 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, EB_Garamond, Noto_Sans, IBM_Plex_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import PreventZoom from "@/components/PreventZoom";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -168,7 +170,10 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/images/Wishes/BungaKananBawah.webp" />
         <link rel="preload" as="image" href="/images/Wishes/BungaKiriBawah.webp" />
       </head>
-      <body>{children}</body>
+      <body>
+        <PreventZoom />
+        {children}
+        </body>
     </html>
   );
 }
