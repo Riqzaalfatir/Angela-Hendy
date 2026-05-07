@@ -33,7 +33,9 @@ html {
   max-width: 100vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  background: #ffffff; /* ← khusus html saja */
+  background: #ffffff; 
+    background: #670C0F; /* ← merah, biar ga lag putih */
+
 }
 
 body {

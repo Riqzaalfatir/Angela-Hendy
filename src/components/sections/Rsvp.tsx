@@ -18,7 +18,19 @@ const Rsvp = ({ onOpenWishes }: Props) => {
   const [scale, setScale] = useState(1);
   const [selected, setSelected] = useState<"hadir" | "tidak_hadir" | null>(null);
   const [notif, setNotif] = useState<NotifType | null>(null);
+  const [safeAreaTop, setSafeAreaTop] = useState(0);
 
+  // Safe area — cukup sekali
+  useEffect(() => {
+    const el = document.createElement("div");
+    el.style.paddingTop = "env(safe-area-inset-top)";
+    document.body.appendChild(el);
+    const val = parseInt(getComputedStyle(el).paddingTop);
+    document.body.removeChild(el);
+    setSafeAreaTop(isNaN(val) ? 0 : val);
+  }, []);
+
+  // Scale
   useEffect(() => {
     const updateScale = () => {
       const panel = document.querySelector(".sections-panel") as HTMLElement;
@@ -30,7 +42,9 @@ const Rsvp = ({ onOpenWishes }: Props) => {
     return () => window.removeEventListener("resize", updateScale);
   }, []);
 
-  const rsvpTop = 0;
+  // rsvpTop satu kali, setelah kedua state siap
+  const rsvpTop = safeAreaTop / scale;
+
   const dearTop = rsvpTop + 96 + 32;
   const selaTop = dearTop + 20 + 15;
   const kindlyTop = selaTop + 56;
@@ -78,7 +92,9 @@ const Rsvp = ({ onOpenWishes }: Props) => {
       <div
         id="rsvp"
         className="relative w-full"
-        style={{ height: `${CANVAS_HEIGHT * scale}px` }}
+        style={{ height: `${CANVAS_HEIGHT * scale}px`,
+      
+      }}
       >
         <div
           className="absolute top-0 left-1/2 origin-top"

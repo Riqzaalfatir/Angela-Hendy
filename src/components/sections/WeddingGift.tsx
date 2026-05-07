@@ -101,7 +101,7 @@
                     <p style={{ fontFamily: "EB Garamond, serif", fontSize: 12 }}>BCA</p>
                     <p style={{ fontFamily: "EB Garamond, serif", fontSize: 12 }}>8090598253</p>
                     <p style={{ fontFamily: "EB Garamond, serif", fontSize: 12 }}>
-                      A/n angle tantiana / hendy s.
+                      a/n  Angele Tantiana / Hendy S.
                     </p>
                   </div>
                   <button
