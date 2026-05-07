@@ -10,6 +10,7 @@ module.exports = {
           garamond: ["var(--font-eb-garamond)"], 
           cylburn: ["var(--font-cylburn)"],
           noto: ["var(--font-noto-sans)"],
+          ibm: ["var(--font-ibm-sans)"],
       },
     },
   },

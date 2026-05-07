@@ -103,12 +103,12 @@ export default function HeroSection() {
           style={{ top: 135, left: 55 }} />
 
         <Image priority src="/images/Hero/AmplopBunga.webp" alt=""
-          width={255} height={280} className="absolute z-30 hero-aset-7"
-          style={{ top: 300, left: 20 }} />
+          width={260} height={280} className="absolute z-30 hero-aset-7"
+          style={{ top: 298, left: 20 }} />
 
         <div
           className="hero-aset-8 absolute z-[35] flex flex-col justify-center"
-          style={{ top: 320, left: 29, width: 245, height: 280, paddingLeft: 80 }}
+          style={{ top: 320, left: 14, width: 245, height: 280, paddingLeft: 80 }}
         >
           <p className="font-garamond text-[#7C1419] leading-snug text-[9px]">
             So they no onger two,<br />but one flesh.
@@ -116,7 +116,7 @@ export default function HeroSection() {
           <p className="font-garamond text-[#7C1419] leading-snug text-[9px] mt-2">
             Therefore what God<br />has joined together, let no one separate
           </p>
-          <p className="font-garamond text-[#7C1419] italic text-[9px] mt-3 pl-11">
+          <p className="font-garamond text-[#7C1419] italic text-[9px] mt-3 pl-[68px]">
             Matthew 19:6
           </p>
         </div>

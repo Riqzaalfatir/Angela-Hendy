@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import WishesCard from "../popup/WishesCard";
 import { dummyPesan } from "../data/wishes";
@@ -200,7 +200,7 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
     className="grid grid-cols-2"
     style={{ gap: s(3.08, 12) }}
   >
-                      {pesanList.map((item) => (
+                      {/* {pesanList.map((item) => (
                         <motion.div
                           key={item.id}
                           initial={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -208,7 +208,20 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
                           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                           onClick={() => setSelectedMessage(item)}
                           className="rounded-md  shadow-md bg-white flex flex-col cursor-pointer"
-                        >
+                        > */}
+                         {pesanList.map((item, index) => (
+  <motion.div
+    key={item.id}
+    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+    animate={{ opacity: 1, y: 0, scale: 1 }}
+    transition={{ 
+      duration: 3.8, 
+      delay: index * 0.2,  // ← tiap card delay 80ms setelah card sebelumnya
+      ease: [0.22, 1, 0.36, 1] 
+    }}
+    onClick={() => setSelectedMessage(item)}
+    className="rounded-md shadow-md bg-white flex flex-col cursor-pointer"
+  >
                           <div
                             className="relative flex-1 flex flex-col justify-center"
                             style={{ padding: s(2.56, 10) }}
@@ -296,7 +309,65 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
       </div>
 
       {/* POPUP SUKSES */}
-      {showPopup && (
+      <AnimatePresence>
+  {showPopup && (
+    <motion.div
+      className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-[60]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.2 }}
+    >
+      <motion.div
+        className="bg-[#F7F8F2] rounded-2xl text-center shadow-xl border border-[#E4E7D6]"
+        initial={{ opacity: 0, scale: 0.92, y: 16 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.92, y: 16 }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        style={{
+          padding: s(6.15, 24),
+          width: s(87.18, 340),
+        }}
+      >
+        <h3
+          className="font-garamond font-semibold text-[#7B2729] tracking-wide"
+          style={{ fontSize: s(5.64, 22), marginBottom: s(3.08, 12) }}
+        >
+          Pesan Terkirim!
+        </h3>
+        <div
+          className="bg-[#7B2729] mx-auto opacity-60"
+          style={{
+            width: s(10.26, 40),
+            height: s(0.51, 2),
+            marginBottom: s(4.1, 16),
+          }}
+        />
+        <p
+          className="text-[#7B2729] font-garamond leading-relaxed"
+          style={{ fontSize: s(4.1, 16), marginBottom: s(6.15, 24) }}
+        >
+          Terima kasih atas doa dan ucapan baik Anda. Kami sangat menghargai
+          pesan yang telah diberikan.
+        </p>
+        <button
+          onClick={() => setShowPopup(false)}
+          className="bg-[#7B2729] text-white rounded-full font-garamond transition-all"
+          style={{
+            paddingLeft: s(6.15, 24),
+            paddingRight: s(6.15, 24),
+            paddingTop: s(2.05, 8),
+            paddingBottom: s(2.05, 8),
+            fontSize: s(3.59, 14),
+          }}
+        >
+          Close
+        </button>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+      {/* {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-[60]">
           <div
             className="bg-[#F7F8F2] rounded-2xl text-center shadow-xl border border-[#E4E7D6]"
@@ -341,7 +412,7 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
             </button>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 }

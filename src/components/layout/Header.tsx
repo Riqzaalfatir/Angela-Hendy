@@ -4,15 +4,17 @@ import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 
-
 type Props = {
   onOpenWishes: () => void;
   onOpenGift: () => void;
-    onCloseAll: () => void;  // ← tambah
-
+  onCloseAll: () => void; // ← tambah
 };
 
-const Header = ({ onOpenWishes, onOpenGift, onCloseAll }: Props): React.ReactElement => {
+const Header = ({
+  onOpenWishes,
+  onOpenGift,
+  onCloseAll,
+}: Props): React.ReactElement => {
   const [open, setOpen] = useState<boolean>(false);
 
   const linkMenu = [
@@ -54,20 +56,27 @@ const Header = ({ onOpenWishes, onOpenGift, onCloseAll }: Props): React.ReactEle
 
   return (
     <div
-      className="fixed top-0 left-0 w-full z-[999] px-4 py-3 lg:left-auto lg:right-0 lg:w-[435px] lg:px-5 lg:py-4"
+      className="fixed top-0 left-0 w-full z-[999] px-4 py-3 lg:top-[34px] lg:left-[41px] "
       style={{ willChange: "transform", transform: "translateZ(0)" }}
     >
       {/* HAMBURGER */}
       {!open && (
-        <motion.button
-          onClick={() => setOpen(true)}
-          whileTap={{ scale: 0.92 }}
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 250, damping: 20 }}
-          className="hero-aset-8 text-[#C3C3C3] text-[28px]"
-        >
-          <FiMenu />
-        </motion.button>
+<motion.button
+  onClick={() => setOpen(true)}
+  initial={{ opacity: 0, scale: 0.98 }}
+  animate={{ 
+    opacity: open ? 0 : 1, 
+    scale: open ? 0.95 : 1,
+    pointerEvents: open ? "none" : "auto"  // biar ga bisa diklik waktu hidden
+  }}
+  transition={{ duration: 1.8, ease: "easeInOut" }}
+  whileTap={{ scale: 0.92 }}
+  whileHover={{ scale: 1.05 }}
+  className="text-[#C3C3C3] text-[28px] lg:text-[44px]"
+  style={{ pointerEvents: open ? "none" : "auto" }}
+>
+  <FiMenu />
+</motion.button>
       )}
 
       {/* DROPDOWN */}
@@ -82,7 +91,7 @@ const Header = ({ onOpenWishes, onOpenGift, onCloseAll }: Props): React.ReactEle
             }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             style={{ originX: 0, originY: 0 }}
-            className="absolute top-[12px] left-[25px] bg-[#7B7B7B]/70 py-4 px-5 text-white w-[255px]"
+            className="absolute top-[12px] left-[22px] lg:top-[5px] lg:left-[0px]  bg-[#7B7B7B]/70 py-4 px-5 text-white w-[255px] lg:w-[424px]"
           >
             {/* CLOSE X */}
             <motion.button
@@ -91,9 +100,11 @@ const Header = ({ onOpenWishes, onOpenGift, onCloseAll }: Props): React.ReactEle
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="absolute top-[-12px] left-[6px]"
+              className="absolute top-[-12px] left-[6px] lg:top-[-12px] lg:left-[17px]"
             >
-              <p className="text-[32px] text-white font-noto">x</p>
+              <p className="text-[32px] lg:text-[53px] text-white font-ibm font-light">
+                x
+              </p>
             </motion.button>
 
             {/* MENU */}
@@ -101,29 +112,33 @@ const Header = ({ onOpenWishes, onOpenGift, onCloseAll }: Props): React.ReactEle
               variants={container}
               initial="hidden"
               animate="show"
-              className="pt-3.5 pl-3 space-y-1.5 text-[12px] font-noto tracking-[0.2em] text-white font-medium flex flex-col"
+              className="pt-3.5 pl-3 lg:pt-10 lg:pl-10 space-y-1.5 lg:space-y-3.5 text-[12px] lg:text-[18px] font-noto  text-white font-medium flex flex-col"
             >
               {linkMenu.map((menu) => (
                 <motion.a
                   key={menu.name}
                   href={menu.link ?? undefined}
                   variants={itemVariants}
-                 onClick={() => {
-  if (menu.action) {
-    menu.action();
-  } else {
-    onCloseAll();
-    setTimeout(() => {
-      const el = document.querySelector(menu.link!);
-      el?.scrollIntoView({ behavior: "smooth" });
-    }, 300); // kasih jeda 300ms biar modal keburu nutup dulu
-  }
-  setTimeout(() => setOpen(false), 200);
-}}
+                  onClick={() => {
+                    if (menu.action) {
+                      menu.action();
+                    } else {
+                      onCloseAll();
+                      setTimeout(() => {
+                        const el = document.querySelector(menu.link!);
+                        el?.scrollIntoView({ behavior: "smooth" });
+                      }, 300); // kasih jeda 300ms biar modal keburu nutup dulu
+                    }
+                    setTimeout(() => setOpen(false), 200);
+                  }}
                   className="group relative flex items-center cursor-pointer"
                 >
-                  <span className="absolute left-0 opacity-0 transition-all duration-500 ease-out group-hover:opacity-100">→</span>
-                  <span className="transition-all duration-300 ease-out group-hover:translate-x-[18px]">{menu.name}</span>
+                  <span className="absolute left-0 opacity-0 transition-all duration-500 ease-out group-hover:opacity-100">
+                    →
+                  </span>
+                  <span className="transition-all duration-300 ease-out group-hover:translate-x-[18px] lg:group-hover:translate-x-[24px]">
+                    {menu.name}
+                  </span>
                 </motion.a>
               ))}
             </motion.ul>
@@ -133,7 +148,7 @@ const Header = ({ onOpenWishes, onOpenGift, onCloseAll }: Props): React.ReactEle
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
-              className="pt-[17px] pl-3 text-[8px] font-sans font-light pb-2 tracking-wide"
+              className="pt-[19px] lg:pt-[25px] pl-3 lg:pl-10 text-[8px] lg:text-[14px] font-noto font-light pb-2 lg:pb-8 tracking-wide text-white/90"
             >
               Select a section above to continue
             </motion.p>

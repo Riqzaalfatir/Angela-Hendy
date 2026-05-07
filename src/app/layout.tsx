@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, EB_Garamond, Noto_Sans } from "next/font/google";
+import { Geist, Geist_Mono, EB_Garamond, Noto_Sans, IBM_Plex_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -28,7 +28,14 @@ const cylburn = localFont({
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300","400", "500", "600", "700"],
+});
+
+
+const ibmSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  variable: "--font-ibm-sans",
+  weight: ["300","400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -44,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} ${cylburn.variable} ${notoSans.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} ${cylburn.variable} ${notoSans.variable} ${ibmSans.variable}`}
     >
       <head>
         {/* Herp */}
