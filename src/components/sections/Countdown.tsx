@@ -3,6 +3,12 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import FadeUp from "@/components/ui/FadeUp";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import FadeIn from "../ui/FadeIn";
+
+
+
 
 // Konstanta 
 const CANVAS_WIDTH = 390;
@@ -34,6 +40,8 @@ function useCountdown() {
 
 
 
+
+
 // Komponen Utama
 export default function Countdown() {
   const [scale, setScale] = useState(1);
@@ -50,6 +58,22 @@ export default function Countdown() {
     window.addEventListener("resize", updateScale);
     return () => window.removeEventListener("resize", updateScale);
   }, []);
+
+  useEffect(() => {
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+
+  setTimeout(() => {
+    AOS.refreshHard();
+  }, 500);
+}, []);
+
+useEffect(() => {
+  AOS.refreshHard();
+}, [scale]);
+
 
   // Nilai countdown
   const labels = ["Days", "Hours", "Minutes", "Seconds"];
@@ -108,57 +132,60 @@ export default function Countdown() {
         />
 
         {/* Teks pembuka */}
-        <FadeUp delay={0}>
-          <p className="absolute w-full text-center text-white z-10"
+<FadeIn delay={0.2}>
+          <p  className="absolute w-full text-center text-white z-10"
             style={{ top: topBase, fontFamily: "EB Garamond, serif", fontSize: 14, lineHeight: "20px" }}>
             Cordially request the honour of your presence at<br />
             the marriage of their son and daughter
           </p>
-        </FadeUp>
+</FadeIn>
 
         {/* Nama mempelai pria */}
-        <FadeUp delay={0.2}>
+<FadeIn delay={0.6}>
+
           <p className="absolute w-full text-center text-white z-10"
             style={{ top: hendyTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}>
             Hendy Sudjono, S.AB.
           </p>
-        </FadeUp>
+          </FadeIn>
 
         {/* Simbol & */}
-        <FadeUp delay={0.4}>
+        <FadeIn delay={1}>
+
           <p className="absolute w-full text-center text-white z-10"
             style={{ top: andTop, fontFamily: "Cylburn, cursive", fontSize: 36 }}>
             &amp;
           </p>
-        </FadeUp>
+                    </FadeIn>
+
 
         {/* Nama mempelai wanita */}
-        <FadeUp delay={0.6}>
+        <FadeIn delay={1.4}>
           <p className="absolute w-full text-center text-white z-10"
             style={{ top: angeleTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}>
             Angele Tantiana, B.Bus.
           </p>
-        </FadeUp>
+                    </FadeIn>
 
         {/* Teks "Our joy..." */}
-        <FadeUp delay={0.8}>
+        <FadeIn delay={1.8}>
           <p className="absolute w-full text-center text-white z-10"
             style={{ top: joyTop, fontFamily: "EB Garamond, serif", fontSize: 14, lineHeight: "20px" }}>
             Our joy will be complete with<br />
             your presence and blessings.
           </p>
-        </FadeUp>
+        </FadeIn>
 
         {/* Tanggal acara */}
-        <FadeUp delay={1.0}>
+        <FadeIn delay={2.2}>
           <p className="absolute w-full text-center text-white uppercase z-10"
             style={{ top: dateTop, fontFamily: "EB Garamond, serif", fontSize: 24 }}>
             Saturday, 23 May 2026
           </p>
-        </FadeUp>
+        </FadeIn>
 
         {/* Oval countdown */}
-        <FadeUp delay={1.2}>
+        <FadeIn delay={2.6}>
           <div className="absolute z-10 flex justify-center gap-4" style={{ top: ovalTop, width: "100%" }}>
             {values.map((val, i) => (
               <div
@@ -175,10 +202,10 @@ export default function Countdown() {
               </div>
             ))}
           </div>
-        </FadeUp>
+        </FadeIn>
 
         {/* Tombol Mark Your Calendar */}
-        <FadeUp delay={1.4}>
+        <FadeIn delay={3}>
           <div
             className="absolute flex items-center justify-center bg-white border border-white rounded-full"
             style={{
@@ -197,7 +224,7 @@ export default function Countdown() {
               MARK YOUR CALENDAR
             </a>
           </div>
-        </FadeUp>
+        </FadeIn>
 
       </div>
     </div>
