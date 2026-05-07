@@ -195,3 +195,6 @@ a {
   }
 }
 
+#wishes {
+  -webkit-overflow-scrolling: auto; /* matikan momentum scroll iOS */
+}
