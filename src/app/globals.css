@@ -44,9 +44,7 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   color: var(--foreground);
-  /* background: #670C0F; */
-    background: #ffffff; /* ← ini saja, hapus yang #670C0F */
-
+  background: #670C0F;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

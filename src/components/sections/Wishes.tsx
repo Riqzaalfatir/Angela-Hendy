@@ -53,10 +53,10 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
           {/* ✅ Container dibatasi max 390px */}
           <div
             id="wishes"
-            className="relative overflow-hidden overscroll-none"
+            className="relative overflow-hidden overscroll-none max-w-[440px] md:max-w-full lg:max-w-[440px]"
             style={{
               width: "100%",
-              maxWidth: "440px",
+              // maxWidth: "440px",
               height: "100dvh",
               backgroundImage: "url('/images/Hero/Default.webp')",
               backgroundSize: "cover",
@@ -143,7 +143,7 @@ export default function Wishes({ open, onClose, onOpenGift }: Props) {
 
               {/* LIST PESAN — flex-1 mengisi sisa ruang */}
               <div
-                className={`w-full flex-1 min-h-0 max-h-[263px] overscroll-contain  ${
+                className={`w-full flex-1 min-h-0 max-h-[263px] md:max-h-[523px]  lg:max-h-[263px] overscroll-contain  ${
                   !showAll ? "bg-white rounded-2xl overflow-y-auto" : ""
                 }`}
               >

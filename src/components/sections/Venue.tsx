@@ -169,7 +169,7 @@ const Venue = () => {
               src="/images/Venue/Pengantin.webp"
               alt="Foto couple"
               fill
-              className="object-cover z-20"
+              className="object-cover z-2"
             />
           </div>
         </FadeUp>

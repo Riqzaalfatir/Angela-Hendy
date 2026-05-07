@@ -43,7 +43,7 @@ const Rsvp = ({ onOpenWishes }: Props) => {
   }, []);
 
   // rsvpTop satu kali, setelah kedua state siap
-  const rsvpTop = safeAreaTop / scale;
+const rsvpTop = Math.max(safeAreaTop / scale, 14);
 
   const dearTop = rsvpTop + 96 + 32;
   const selaTop = dearTop + 20 + 15;
@@ -102,6 +102,7 @@ const Rsvp = ({ onOpenWishes }: Props) => {
             width: CANVAS_WIDTH,
             height: CANVAS_HEIGHT,
             transform: `translateX(-50%) scale(${scale})`,
+             overflow: "visible",  // ← tambah ini
           }}
         >
           {/* Ornamen */}
@@ -111,7 +112,8 @@ const Rsvp = ({ onOpenWishes }: Props) => {
             width={320}
             height={320}
             className="absolute -z-10"
-            style={{ top: -360, right: 0 }}
+            style={{ top: -350, right: 0 }}
+            
           />
           <Image
             src="/images/Rsvp/BungaKiri.svg"

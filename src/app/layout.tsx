@@ -129,6 +129,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover", // ← tambah ini
+    maximumScale: 1,        // ← tambah ini
+  userScalable: false, 
 };
 
 export default function RootLayout({
