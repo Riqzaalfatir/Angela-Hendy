@@ -28,20 +28,33 @@
   display: none;
 }
 
-html, body {
+html {
   min-height: 100%;
   max-width: 100vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background: #ffffff; /* ← khusus html saja */
 }
 
 body {
- color: var(--foreground);
-  background: #670C0F; /* warna fallback sesuai theme lo */
+  min-height: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  color: var(--foreground);
+  background: #670C0F;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* body {
+ color: var(--foreground);
+  background: #670C0F; 
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
 
 a {
   color: inherit;
@@ -122,6 +135,8 @@ a {
   z-index: 40;
   overflow-y: auto;
   background: rgba(0, 0, 0, 0.5);
+    overscroll-behavior: none; /* ← tambah ini */
+
 }
 
 @media (min-width: 1024px) {

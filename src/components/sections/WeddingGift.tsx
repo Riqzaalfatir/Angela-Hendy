@@ -44,7 +44,7 @@
             className="relative w-full"
             style={{
               height: `${CANVAS_HEIGHT * scale}px`,
-              minHeight: "100dvh",
+              // minHeight: "100dvh",
             }}
             onClick={(e) => e.stopPropagation()}
           >
