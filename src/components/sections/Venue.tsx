@@ -75,7 +75,7 @@ const Venue = () => {
         {/* Foto ruangan + tombol Google Maps */}
         <FadeIn delay={0.6}>
           <div
-            className="absolute bg-white z-10 mt-0 lg:mt-0"
+            className="absolute bg-white z-10 mt-0 lg:mt-6"
             style={{
               top: imageTop,
               left: (CANVAS_WIDTH - 182) / 2,
@@ -99,7 +99,7 @@ const Venue = () => {
                 href="https://maps.app.goo.gl/Su41WKmteCRACRKx5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-black"
+                className="flex items-center justify-center bg-white"
                 style={{
                   width: 160,
                   height: 30,

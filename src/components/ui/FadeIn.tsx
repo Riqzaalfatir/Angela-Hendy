@@ -26,7 +26,7 @@ export default function FadeIn({
           setShow(false);
         }
       },
-      { threshold: 1, 
+      { threshold: 0.1, 
         rootMargin: "0px 0px -10% 0px" 
 
        }
