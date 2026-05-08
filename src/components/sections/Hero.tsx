@@ -112,7 +112,7 @@ export default function HeroSection() {
         <Image priority src="/images/Hero/CoverKanan.svg" alt="Foto pengantin pria"
           width={90} height={100} className="absolute z-[35] hero-aset-2"
           style={{ top: 125, left: 185 }} />
-
+          
         {/* Amplop double (layer tengah) */}
         <Image priority src="/images/Hero/AmplopDouble.webp" alt=""
           width={275} height={186} className="absolute z-[37] hero-aset-3"

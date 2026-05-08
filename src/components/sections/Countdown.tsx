@@ -185,7 +185,7 @@ useEffect(() => {
         </FadeIn>
 
         {/* Oval countdown */}
-              <div className="absolute z-10 flex justify-center gap-4" style={{ top: ovalTop, width: "100%" }}>
+              {/* <div className="absolute z-10 flex justify-center gap-4" style={{ top: ovalTop, width: "100%" }}>
   {values.map((val, i) => (
     <FadeIn key={labels[i]} delay={2.6 + i * 0.15}>
       <div
@@ -201,8 +201,26 @@ useEffect(() => {
       </div>
     </FadeIn>
   ))}
-</div>
+</div> */}
 
+{/* Oval countdown */}
+<div className="absolute z-10 flex justify-center gap-4" style={{ top: ovalTop, width: "100%" }}>
+  {values.map((val, i) => (
+    <FadeIn key={labels[i]} delay={1.6 + i * 0.2}>
+      <div
+        className="flex flex-col items-center justify-center"
+        style={{ width: 60.82, height: 100, borderRadius: "50%", backgroundColor: "#FFFFFF" }}
+      >
+        <span style={{ fontFamily: "EB Garamond, serif", fontSize: 36, lineHeight: "25px", color: "#7C1419" }}>
+          {String(val).padStart(2, "0")}
+        </span>
+        <span style={{ fontFamily: "EB Garamond, serif", fontSize: 8, marginTop: 7, color: "#7C1419" }}>
+          {labels[i]}
+        </span>
+      </div>
+    </FadeIn>
+  ))}
+</div>
 
         {/* Tombol Mark Your Calendar */}
         <FadeIn delay={2.8}>

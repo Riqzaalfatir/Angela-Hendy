@@ -68,6 +68,7 @@ export default function RootLayout({
 
         {/* Hero */}
         <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/BungaKiri.svg" />
+        <link rel="preload" as="image" type="image/svg+xml" href="/images/Countdown/BungaKanan.svg" />
         <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/AmplopKotak.svg" />
         <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/AmplopHD.svg" />
         <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/Pita.svg" />
