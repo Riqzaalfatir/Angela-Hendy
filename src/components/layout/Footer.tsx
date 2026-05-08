@@ -34,13 +34,22 @@ export default function Footer() {
         }}
       >
         {/* BACKGROUND FOTO */}
-        <Image
+        {/* <Image
           src="/images/Footer/BgFooter.png"
           alt=""
           fill
           priority
           className="object-cover pointer-events-none"
-        />
+        /> */}
+
+        <Image
+  src="/images/Footer/BgFooterHD.png"
+  alt=""
+  fill
+  priority
+  unoptimized
+  className="object-cover pointer-events-none"
+/>
 
         {/* LOGO HA — top: 90px, left: 162px */}
         <div
