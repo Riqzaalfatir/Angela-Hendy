@@ -43,9 +43,9 @@ const Rsvp = ({ onOpenWishes }: Props) => {
     return () => window.removeEventListener("resize", updateScale);
   }, []);
 
-  const rsvpTop        = Math.max(safeAreaTop / scale,);
+  const rsvpTop        = Math.max(safeAreaTop / scale, - 18);
   const dearTop        = rsvpTop + 96 + 32;   // "Dear Mr. / Mrs. /Ms."
-  const selaTop        = dearTop + 20 + 15;   // nama tamu
+  const selaTop        = dearTop + 20 + 15 - 18;   // nama tamu
   const kindlyTop      = selaTop + 56;         // teks "Kindly confirm..."
   const buttonsTop     = kindlyTop + 44 + 21; // tombol Attend & Unable
   const confirmTextTop = buttonsTop + 33 + 36; // teks "Confirm your selection?"
@@ -141,7 +141,7 @@ const Rsvp = ({ onOpenWishes }: Props) => {
           <FadeIn delay={0}>
             <p
               className="absolute w-full text-center text-white z-10 font-cylburn"
-              style={{ top: rsvpTop, fontSize: 96, lineHeight: "96px" }}
+              style={{ top: rsvpTop, fontSize: 96, lineHeight: "96px", paddingTop: 18 }}
             >
               Rsvp
             </p>
@@ -160,8 +160,8 @@ const Rsvp = ({ onOpenWishes }: Props) => {
           {/* Nama tamu */}
           <FadeIn delay={0.6}>
             <p
-              className="absolute w-full text-center text-white z-10 font-cylburn"
-              style={{ top: selaTop, fontSize: 46, lineHeight: "46px" }}
+              className="absolute w-full text-center text-black z-10 font-cylburn"
+              style={{ top: selaTop, fontSize: 46, lineHeight: "46px", paddingTop: 18 }}
             >
               Sela
             </p>
