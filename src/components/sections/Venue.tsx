@@ -65,7 +65,7 @@ const Venue = () => {
         {/* Judul "Venue" */}
         <FadeIn delay={0.2}>
           <p
-            className="absolute w-full text-center text-white z-10 pt-2 "
+            className="absolute w-full text-center text-white z-10 pt-2 bg-black "
             style={{ top: venueTop, fontFamily: "Cylburn, cursive", fontSize: 96}}
           >
             Venue
