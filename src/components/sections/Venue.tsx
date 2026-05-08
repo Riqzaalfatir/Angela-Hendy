@@ -26,11 +26,11 @@ const Venue = () => {
   // ─── Posisi vertikal elemen (px, dalam koordinat canvas 390px) ───
   const venueTop         = 65;                          // judul "Venue"
   const imageTop         = venueTop + 96 + 20;          // foto ruangan
-  const grandBallroomTop = imageTop + 320;              // nama venue
-  const addressTop       = grandBallroomTop + 62 + 18; // alamat
+  const grandBallroomTop = imageTop + 320 - 18;              // nama venue
+  const addressTop       = grandBallroomTop + 62 + 35; // alamat
   const holyTop          = addressTop + 20 + 68 - 18;       // Holy Matrimony
-  const receptionTop     = holyTop + 74 + 30;          // Wedding Reception
-  const ovalTop          = receptionTop + 74 + 63;     // foto oval pengantin
+  const receptionTop     = holyTop + 74 + 30 - 3;          // Wedding Reception
+  const ovalTop          = receptionTop + 74 + 70;     // foto oval pengantin
   const CANVAS_HEIGHT    = ovalTop + 460 + 60;         // total tinggi canvas
 
   return (
@@ -120,7 +120,7 @@ const Venue = () => {
         <FadeIn delay={1}>
           <p
             className="absolute w-full text-center text-white z-10 leading-[29px]"
-            style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}
+            style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38,  paddingTop: 18 }}
           >
             Grand Ballroom<br />
             <span className="text-[30px]">Pullman Bandung Grand Central</span>
@@ -140,7 +140,7 @@ const Venue = () => {
         {/* Sesi Holy Matrimony */}
         <FadeIn delay={1.8}>
           <p
-            className="absolute w-full text-center text-yellow-50 z-10 leading-[40px]"
+            className="absolute w-full text-center  z-10 leading-[40px]"
             style={{ top: holyTop, fontFamily: "Cylburn, cursive", fontSize: 48,    paddingTop: 18,  // ← fix Safari iOS
   }}
           >
@@ -154,8 +154,8 @@ const Venue = () => {
         {/* Sesi Wedding Reception */}
         <FadeIn delay={2.2}>
           <p
-            className="absolute w-full text-center text-white z-10 leading-[45px]"
-            style={{ top: receptionTop, fontFamily: "Cylburn, cursive", fontSize: 48,  }}
+            className="absolute w-full text-center text-black z-10 leading-[45px]"
+            style={{ top: receptionTop, fontFamily: "Cylburn, cursive", fontSize: 48,  paddingTop: 18  }}
           >
             Wedding Reception
             <span style={{ display: "block", fontFamily: "EB Garamond, serif", fontSize: 18, lineHeight: "26px" }}>
