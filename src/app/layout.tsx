@@ -74,8 +74,8 @@ export default function RootLayout({
         <link rel="preload" as="image" type="image/webp" href="/images/Hero/AmplopDouble.webp" />
         <link rel="preload" as="image" type="image/webp" href="/images/Hero/AmplopBunga.webp" />
         <link rel="preload" as="image" type="image/webp" href="/images/Hero/BungaHD.webp" />
-        <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/FotoCew.svg" />
-        <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/FotoCowo.svg" />
+        <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/PengantinCeweHD.png" />
+        <link rel="preload" as="image" type="image/svg+xml" href="/images/Hero/PengantinCowoHD.png" />
         <link rel="preload" as="image" type="image/webp" href="/images/Hero/Default.webp" />
 
         {/* Wishes */}
