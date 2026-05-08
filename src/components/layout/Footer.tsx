@@ -43,7 +43,7 @@ export default function Footer() {
         /> */}
 
         <Image
-  src="/images/Footer/BgFooterHD.png"
+  src="/images/Footer/Bg-Footer.png"
   alt=""
   fill
   priority

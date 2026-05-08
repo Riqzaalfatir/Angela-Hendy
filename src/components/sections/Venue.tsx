@@ -185,7 +185,7 @@ const Venue = () => {
             />
           </div>
         </FadeIn> */}
-        <FadeIn delay={2.6}>
+        {/* <FadeIn delay={2.6}>
   <div
     className="absolute z-20"
     style={{ top: ovalTop, width: CANVAS_WIDTH }}
@@ -200,7 +200,35 @@ const Venue = () => {
       }}
     >
       <Image
-        src="/images/Venue/PengantinHD.png"
+        src="/images/Venue/PengantinOval.png"
+        alt="Foto couple"
+        fill
+        className="object-cover"
+      />
+    </div>
+  </div>
+        </FadeIn> */}
+
+        <FadeIn delay={2.6}>
+  <div
+    className="absolute z-20"
+    style={{ 
+      top: ovalTop, 
+      left: 0,           // ← tambahkan ini
+      width: CANVAS_WIDTH 
+    }}
+  >
+    <div
+      className="relative overflow-hidden mx-auto"
+      style={{
+        width: 302,
+        height: 460,
+        borderRadius: "50%",
+        border: "2px solid #FFFFFF",
+      }}
+    >
+      <Image
+        src="/images/Venue/PengantinOval.png"
         alt="Foto couple"
         fill
         className="object-cover"
