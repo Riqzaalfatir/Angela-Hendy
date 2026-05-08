@@ -1,5 +1,3 @@
-// ANIMASI FADEUP
-
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -17,30 +15,33 @@ export default function FadeIn({
   const [show, setShow] = useState(false);
 
   useEffect(() => {
+    const fallback = setTimeout(() => setShow(true), (delay + 0.5) * 1000);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setShow(true);
+          clearTimeout(fallback);
           if (once) observer.disconnect();
         } else if (!once) {
           setShow(false);
         }
       },
-      { threshold: 0.1, 
-        rootMargin: "0px 0px -10% 0px" 
-
-       }
-      
+      { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
     );
 
     if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [once]);
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallback);
+    };
+  }, [once, delay]);
 
   return (
     <div
       ref={ref}
       style={{
+        minHeight: 1,
         opacity: show ? 1 : 0,
         transform: show ? "translateY(0)" : "translateY(12px)",
         transition: `
