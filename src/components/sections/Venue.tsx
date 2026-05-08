@@ -66,7 +66,7 @@ const Venue = () => {
         <FadeIn delay={0.2}>
           <p
             className="absolute w-full text-center text-white z-10 "
-            style={{ top: venueTop, fontFamily: "Cylburn, cursive", fontSize: 96, lineHeight: "96px" }}
+            style={{ top: venueTop, fontFamily: "Cylburn, cursive", fontSize: 96}}
           >
             Venue
           </p>
