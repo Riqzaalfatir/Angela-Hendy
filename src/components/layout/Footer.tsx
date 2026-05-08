@@ -35,7 +35,7 @@ export default function Footer() {
       >
         {/* BACKGROUND FOTO */}
         <Image
-          src="/images/Footer/Bg-Footer.webp"
+          src="/images/Footer/BgFooter.png"
           alt=""
           fill
           priority

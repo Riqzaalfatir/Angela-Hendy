@@ -200,7 +200,7 @@ const Venue = () => {
       }}
     >
       <Image
-        src="/images/Venue/Pengantin.webp"
+        src="/images/Venue/PengantinHD.png"
         alt="Foto couple"
         fill
         className="object-cover"

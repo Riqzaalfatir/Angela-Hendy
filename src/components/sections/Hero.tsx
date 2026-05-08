@@ -29,7 +29,7 @@ export default function HeroSection() {
   return (
     <div
       id="hero"
-      className="relative w-full overflow-visible"
+      className="relative w-full overflow-visible mb-5"
       style={{ height: `${CANVAS_HEIGHT * scale}px` }}
     >
 
@@ -67,15 +67,19 @@ export default function HeroSection() {
         >
           <p className="font-cylburn text-[#670C0F] flex flex-col items-center leading-none">
             <span className="text-[28px]">Hendy</span>
-            <span className="text-[20px] -my-2">&amp;</span>
+            <span className="text-[20px] -my-2 ml-3">&amp;</span>
             <span className="text-[28px]">Angele</span>
           </p>
-          <p className="font-garamond text-black leading-snug mt-[8px] text-[9px]">
-            We are delighted to<br />
-            welcome you to our wedding<br />
-            invitation. Here, you'll find all the<br />
-            essential details for the wedding
-          </p>
+        <p className="font-garamond text-black leading-snug mt-[8px] text-[9.5px]">
+  We are delighted to<br />
+  welcome you to our<br />
+  wedding invitation.
+</p>
+<p className="font-garamond text-black leading-snug mt-2 text-[9.5px]">
+  Here, you'll find all the<br />
+  essential details for the<br />
+  wedding
+</p>
         </div>
 
 
@@ -90,9 +94,9 @@ export default function HeroSection() {
           style={{ top: 55, left: 46 }} />
 
         {/* Foto pengantin wanita */}
-        <Image priority src="/images/Hero/FotoCew.svg" alt="Foto pengantin wanita"
-          width={115} height={103} className="absolute z-30 hero-aset-2"
-          style={{ top: 105, left: 90 }} />
+        <Image priority src="/images/Hero/PengantinCeweHD.png" alt="Foto pengantin wanita"
+          width={110} height={103} className="absolute z-30 hero-aset-2"
+          style={{ top: 110, left: 93 }} />
 
         {/* Cover overlay foto pengantin wanita */}
         <Image priority src="/images/Hero/Cover.svg" alt="Foto pengantin wanita"
@@ -100,9 +104,9 @@ export default function HeroSection() {
           style={{ top: 109, left: 92 }} />
 
         {/* Foto pengantin pria */}
-        <Image priority src="/images/Hero/FotoCowo.svg" alt="Foto pengantin pria"
-          width={140} height={140} className="absolute z-[35] hero-aset-2"
-          style={{ top: 125, left: 160 }} />
+        <Image priority src="/images/Hero/PengantinCowoHD.png" alt="Foto pengantin pria"
+          width={90} height={90} className="absolute z-[35] hero-aset-2"
+          style={{ top: 125, left: 184 }} />
 
         {/* Cover overlay foto pengantin pria */}
         <Image priority src="/images/Hero/CoverKanan.svg" alt="Foto pengantin pria"
@@ -123,15 +127,15 @@ export default function HeroSection() {
         {/* Matthew 19:6 */}
         <div
           className="hero-aset-8 absolute z-[35] flex flex-col justify-center"
-          style={{ top: 320, left: 14, width: 245, height: 280, paddingLeft: 80 }}
+          style={{ top: 325, left: 17, width: 245, height: 280, paddingLeft: 80 }}
         >
-          <p className="font-garamond text-[#7C1419] leading-snug text-[9px]">
+          <p className="font-garamond text-[#7C1419] leading-snug text-[10px]">
             So they no onger two,<br />but one flesh.
           </p>
-          <p className="font-garamond text-[#7C1419] leading-snug text-[9px] mt-2">
-            Therefore what God<br />has joined together, let no one separate
+          <p className="font-garamond text-[#7C1419] leading-snug text-[10px] mt-2">
+            Therefore what God<br />has joined together,   <br /> let no one separate
           </p>
-          <p className="font-garamond text-[#7C1419] italic text-[9px] mt-3 pl-[68px]">
+          <p className="font-garamond text-[#7C1419] italic text-[10px] mt-1 pl-[68px]">
             Matthew 19:6
           </p>
         </div>
@@ -148,12 +152,12 @@ export default function HeroSection() {
 
         {/* Teks orang tua */}
         <div className="hero-aset-8 absolute w-full text-center px-4 z-50" style={{ top: 615 }}>
-          <p className="font-garamond text-[14px] text-white">By the Grace of God</p>
-          <p className="font-garamond text-[14px] text-white mt-[26px]">
+          <p className="font-garamond text-[16px] text-white">By the Grace of God</p>
+          <p className="font-garamond text-[16px] text-white mt-[26px]">
             MR. SUDJONO NIATAMIDJAJA and <br />MRS. LIANA SUTANTO
           </p>
-          <p className="font-garamond text-[14px] text-white italic mt-[26px]">together with</p>
-          <p className="font-garamond text-[14px] text-white mt-[26px]">
+          <p className="font-garamond text-[16px] text-white italic mt-[26px]">together with</p>
+          <p className="font-garamond text-[16px] text-white mt-[26px]">
             MR. EDDY TANMADIBRATA and <br />MRS. YULIATI
           </p>
         </div>
