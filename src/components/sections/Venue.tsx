@@ -24,10 +24,10 @@ const Venue = () => {
   }, []);
 
   // ─── Posisi vertikal elemen (px, dalam koordinat canvas 390px) ───
-  const venueTop         = 75;                          // judul "Venue"
+  const venueTop         = 65;                          // judul "Venue"
   const imageTop         = venueTop + 96 + 20;          // foto ruangan
-  const grandBallroomTop = imageTop + 310;              // nama venue
-  const addressTop       = grandBallroomTop + 62 + 17; // alamat
+  const grandBallroomTop = imageTop + 325;              // nama venue
+  const addressTop       = grandBallroomTop + 62 + 18; // alamat
   const holyTop          = addressTop + 20 + 68;       // Holy Matrimony
   const receptionTop     = holyTop + 74 + 30;          // Wedding Reception
   const ovalTop          = receptionTop + 74 + 63;     // foto oval pengantin
@@ -59,13 +59,13 @@ const Venue = () => {
           width={318}
           height={318}
           className="absolute z-0"
-          style={{ bottom: 267, left: -6 }}
+          style={{ bottom: 257, left: -6 }}
         />
 
         {/* Judul "Venue" */}
         <FadeIn delay={0.2}>
           <p
-            className="absolute w-full text-center text-white z-10 pt-1"
+            className="absolute w-full text-center text-white z-10"
             style={{ top: venueTop, fontFamily: "Cylburn, cursive", fontSize: 96}}
           >
             Venue
@@ -75,7 +75,7 @@ const Venue = () => {
         {/* Foto ruangan + tombol Google Maps */}
         <FadeIn delay={0.6}>
           <div
-            className="absolute bg-white z-10"
+            className="absolute bg-white z-10 mt-6"
             style={{
               top: imageTop,
               left: (CANVAS_WIDTH - 182) / 2,
@@ -119,7 +119,7 @@ const Venue = () => {
         {/* Nama venue */}
         <FadeIn delay={1}>
           <p
-            className="absolute w-full text-center text-white z-10"
+            className="absolute w-full text-center text-white z-10 leading-[29px]"
             style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}
           >
             Grand Ballroom<br />
@@ -140,7 +140,7 @@ const Venue = () => {
         {/* Sesi Holy Matrimony */}
         <FadeIn delay={1.8}>
           <p
-            className="absolute w-full text-center text-white z-10"
+            className="absolute w-full text-center text-white z-10 leading-[40px]"
             style={{ top: holyTop, fontFamily: "Cylburn, cursive", fontSize: 48,  }}
           >
             Holy Matrimony
@@ -153,7 +153,7 @@ const Venue = () => {
         {/* Sesi Wedding Reception */}
         <FadeIn delay={2.2}>
           <p
-            className="absolute w-full text-center text-white z-10"
+            className="absolute w-full text-center text-white z-10 leading-[45px]"
             style={{ top: receptionTop, fontFamily: "Cylburn, cursive", fontSize: 48,  }}
           >
             Wedding Reception
@@ -169,7 +169,7 @@ const Venue = () => {
             className="absolute overflow-hidden z-20"
             style={{
               top: ovalTop,
-              left: (CANVAS_WIDTH - 302) / 2,
+              left: (CANVAS_WIDTH - 295) / 2,
               width: 302,
               height: 460,
               borderRadius: "50%",
