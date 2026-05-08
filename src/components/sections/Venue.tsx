@@ -25,7 +25,7 @@ const Venue = () => {
 
   // ─── Posisi vertikal elemen (px, dalam koordinat canvas 390px) ───
   const venueTop         = 65;                          // judul "Venue"
-  const imageTop         = venueTop + 96 + 20;          // foto ruangan
+  const imageTop         = venueTop + 96 + 15;          // foto ruangan
   const grandBallroomTop = imageTop + 350;              // nama venue
   const addressTop       = grandBallroomTop + 62 + 18; // alamat
   const holyTop          = addressTop + 20 + 68;       // Holy Matrimony
@@ -153,7 +153,7 @@ const Venue = () => {
         {/* Sesi Wedding Reception */}
         <FadeIn delay={2.2}>
           <p
-            className="absolute w-full text-center text-black z-10 leading-[45px] -mt-5"
+            className="absolute w-full text-center text-yellow-300 z-10 leading-[45px] -mt-5"
             style={{ top: receptionTop, fontFamily: "Cylburn, cursive", fontSize: 48,  }}
           >
             Wedding Reception
