@@ -119,7 +119,7 @@ const Venue = () => {
         {/* Nama venue */}
         <FadeIn delay={1}>
           <p
-            className="absolute w-full text-center text-black z-10 leading-[29px]"
+            className="absolute w-full text-cener text-yellow-50 z-10 leading-[29px]"
             style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}
           >
             Grand Ballroom<br />

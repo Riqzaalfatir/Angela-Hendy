@@ -43,7 +43,7 @@ const Rsvp = ({ onOpenWishes }: Props) => {
     return () => window.removeEventListener("resize", updateScale);
   }, []);
 
-  const rsvpTop        = Math.max(safeAreaTop / scale, 14);
+  const rsvpTop        = Math.max(safeAreaTop / scale,);
   const dearTop        = rsvpTop + 96 + 32;   // "Dear Mr. / Mrs. /Ms."
   const selaTop        = dearTop + 20 + 15;   // nama tamu
   const kindlyTop      = selaTop + 56;         // teks "Kindly confirm..."
@@ -114,7 +114,7 @@ const Rsvp = ({ onOpenWishes }: Props) => {
             width={320}
             height={320}
             className="absolute -z-10"
-            style={{ top: -350, right: 0 }}
+            style={{ top: -365, right: 0 }}
           />
 
           {/* Ornamen bunga kiri bawah */}
