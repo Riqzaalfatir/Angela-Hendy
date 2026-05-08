@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -26,7 +25,7 @@ const Venue = () => {
 
   // ─── Posisi vertikal elemen (px, dalam koordinat canvas 390px) ───
   const venueTop         = 65;                          // judul "Venue"
-  const imageTop         = venueTop + 96 + 20;          // foto ruangan
+  const imageTop         = venueTop + 96 + 30;          // foto ruangan
   const grandBallroomTop = imageTop + 350;              // nama venue
   const addressTop       = grandBallroomTop + 62 + 18; // alamat
   const holyTop          = addressTop + 20 + 68;       // Holy Matrimony
@@ -60,7 +59,7 @@ const Venue = () => {
           width={318}
           height={318}
           className="absolute z-0"
-          style={{ bottom: 290, left: -6 }}
+          style={{ bottom: 257, left: -6 }}
         />
 
         {/* Judul "Venue" */}
@@ -120,7 +119,7 @@ const Venue = () => {
         {/* Nama venue */}
         <FadeIn delay={1}>
           <p
-            className="absolute w-full text-center text-yellow-600 z-10 leading-[29px] "
+            className="absolute w-full text-center text-black z-10 leading-[29px]"
             style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}
           >
             Grand Ballroom<br />
@@ -131,7 +130,7 @@ const Venue = () => {
         {/* Alamat venue */}
         <FadeIn delay={1.4}>
           <p
-            className="absolute w-full text-center text-white z-10 -mt-5"
+            className="absolute w-full text-center text-white z-10"
             style={{ top: addressTop, fontFamily: "EB Garamond, serif", fontSize: 14,  }}
           >
             Jl. Diponegoro No.27, Bandung
@@ -141,7 +140,7 @@ const Venue = () => {
         {/* Sesi Holy Matrimony */}
         <FadeIn delay={1.8}>
           <p
-            className="absolute w-full text-center text-white z-10 leading-[40px] -mt-5"
+            className="absolute w-full text-center text-white z-10 leading-[40px]"
             style={{ top: holyTop, fontFamily: "Cylburn, cursive", fontSize: 48,  }}
           >
             Holy Matrimony
@@ -154,7 +153,7 @@ const Venue = () => {
         {/* Sesi Wedding Reception */}
         <FadeIn delay={2.2}>
           <p
-            className="absolute w-full text-center text-white z-10 leading-[45px] -mt-5"
+            className="absolute w-full text-center text-white z-10 leading-[45px]"
             style={{ top: receptionTop, fontFamily: "Cylburn, cursive", fontSize: 48,  }}
           >
             Wedding Reception
@@ -167,7 +166,7 @@ const Venue = () => {
         {/* Foto pengantin bentuk oval */}
         <FadeIn delay={2.6}>
           <div
-            className="absolute overflow-hidden z-20 -mt-3"
+            className="absolute overflow-hidden z-20"
             style={{
               top: ovalTop,
               left: (CANVAS_WIDTH - 295) / 2,
