@@ -25,12 +25,12 @@ const Venue = () => {
 
   // ─── Posisi vertikal elemen (px, dalam koordinat canvas 390px) ───
   const venueTop         = 65;                          // judul "Venue"
-  const imageTop         = venueTop + 96 + 20;          // foto ruangan
+const imageTop = venueTop + 96 + (scale >= 1 ? 20 : 0);
   const grandBallroomTop = imageTop + 320 - 18;              // nama venue
   const addressTop       = grandBallroomTop + 62 + 35; // alamat
   const holyTop          = addressTop + 20 + 68 - 18;       // Holy Matrimony
   const receptionTop     = holyTop + 74 + 30 - 3;          // Wedding Reception
-  const ovalTop          = receptionTop + 74 + 70;     // foto oval pengantin
+  const ovalTop          = receptionTop + 74 + 80;     // foto oval pengantin
   const CANVAS_HEIGHT    = ovalTop + 460 + 60;         // total tinggi canvas
 
   return (
@@ -56,10 +56,10 @@ const Venue = () => {
         <Image
           src="/images/Venue/BungaKiri.svg"
           alt=""
-          width={318}
-          height={318}
+          width={295}
+          height={295}
           className="absolute z-0"
-          style={{ bottom: 257, left: -6 }}
+          style={{ bottom: 295, left: -6 }}
         />
 
         {/* Judul "Venue" */}
@@ -140,7 +140,7 @@ const Venue = () => {
         {/* Sesi Holy Matrimony */}
         <FadeIn delay={1.8}>
           <p
-            className="absolute w-full text-center  z-10 leading-[40px]"
+            className="absolute w-full text-center text-white  z-10 leading-[40px]"
             style={{ top: holyTop, fontFamily: "Cylburn, cursive", fontSize: 48,    paddingTop: 18,  // ← fix Safari iOS
   }}
           >
@@ -154,7 +154,7 @@ const Venue = () => {
         {/* Sesi Wedding Reception */}
         <FadeIn delay={2.2}>
           <p
-            className="absolute w-full text-center text-black z-10 leading-[45px]"
+            className="absolute w-full text-center text-white z-10 leading-[45px]"
             style={{ top: receptionTop, fontFamily: "Cylburn, cursive", fontSize: 48,  paddingTop: 18  }}
           >
             Wedding Reception

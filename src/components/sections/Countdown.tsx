@@ -185,9 +185,10 @@ useEffect(() => {
         </FadeIn>
 
         {/* Oval countdown */}
+                <FadeIn delay={2.6}>
+
         <div className="absolute z-10 flex justify-center gap-4" style={{ top: ovalTop, width: "100%" }}>
   {values.map((val, i) => (
-    <FadeIn key={labels[i]} delay={0.4 + i * 0.3}>
       <div
         className="flex flex-col items-center justify-center"
         style={{ width: 60.82, height: 100, borderRadius: "50%", backgroundColor: "#FFFFFF" }}
@@ -199,12 +200,13 @@ useEffect(() => {
           {labels[i]}
         </span>
       </div>
-    </FadeIn>
   ))}
 </div>
+        </FadeIn>
+
 
         {/* Tombol Mark Your Calendar */}
-        <FadeIn delay={3.5}>
+        <FadeIn delay={2.8}>
           <div
             className="absolute flex items-center justify-center bg-white  border border-white rounded-full"
             style={{

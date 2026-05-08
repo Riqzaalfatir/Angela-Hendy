@@ -160,7 +160,7 @@ const Rsvp = ({ onOpenWishes }: Props) => {
           {/* Nama tamu */}
           <FadeIn delay={0.6}>
             <p
-              className="absolute w-full text-center text-black z-10 font-cylburn"
+              className="absolute w-full text-center  z-10 font-cylburn"
               style={{ top: selaTop, fontSize: 46, lineHeight: "46px", paddingTop: 18 }}
             >
               Sela
