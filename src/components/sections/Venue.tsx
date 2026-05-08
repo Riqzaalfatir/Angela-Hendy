@@ -59,7 +59,7 @@ const Venue = () => {
           width={318}
           height={318}
           className="absolute z-0"
-          style={{ bottom: 257, left: -6 }}
+          style={{ bottom: 290, left: -6 }}
         />
 
         {/* Judul "Venue" */}
