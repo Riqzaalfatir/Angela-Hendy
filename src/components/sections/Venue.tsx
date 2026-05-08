@@ -26,7 +26,7 @@ const Venue = () => {
   // ─── Posisi vertikal elemen (px, dalam koordinat canvas 390px) ───
   const venueTop         = 65;                          // judul "Venue"
   const imageTop         = venueTop + 96 + 15;          // foto ruangan
-  const grandBallroomTop = imageTop + 355;              // nama venue
+  const grandBallroomTop = imageTop + 320;              // nama venue
   const addressTop       = grandBallroomTop + 62 + 18; // alamat
   const holyTop          = addressTop + 20 + 68;       // Holy Matrimony
   const receptionTop     = holyTop + 74 + 30;          // Wedding Reception
@@ -119,7 +119,7 @@ const Venue = () => {
         {/* Nama venue */}
         <FadeIn delay={1}>
           <p
-            className="absolute w-full text-center text-white z-10 leading-[29px] -mt-5"
+            className="absolute w-full text-center text-white z-10 leading-[29px]"
             style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}
           >
             Grand Ballroom<br />
@@ -140,7 +140,7 @@ const Venue = () => {
         {/* Sesi Holy Matrimony */}
         <FadeIn delay={1.8}>
           <p
-            className="absolute w-full text-center text-white z-10 leading-[40px] -mt-5"
+            className="absolute w-full text-center text-white z-10 leading-[40px] "
             style={{ top: holyTop, fontFamily: "Cylburn, cursive", fontSize: 48,  }}
           >
             Holy Matrimony
@@ -153,7 +153,7 @@ const Venue = () => {
         {/* Sesi Wedding Reception */}
         <FadeIn delay={2.2}>
           <p
-            className="absolute w-full text-center text-yellow-300 z-10 leading-[45px] -mt-5"
+            className="absolute w-full text-center text-yellow-300 z-10 leading-[45px] "
             style={{ top: receptionTop, fontFamily: "Cylburn, cursive", fontSize: 48,  }}
           >
             Wedding Reception
@@ -312,7 +312,7 @@ export default Venue;
 //         {/* Nama venue */}
 //         <FadeIn delay={1}>
 //           <p
-//             className="absolute w-full text-center text-white z-10 leading-[29px] -mt-5"
+//             className="absolute w-full text-center text-white z-10 leading-[29px] "
 //             style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}
 //           >
 //             Grand Ballroom<br />
