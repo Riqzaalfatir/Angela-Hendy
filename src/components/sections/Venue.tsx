@@ -119,7 +119,7 @@ const Venue = () => {
         {/* Nama venue */}
         <FadeIn delay={1}>
           <p
-            className="absolute w-full text-center text-white z-10 leading-[29px] -mt-5"
+            className="absolute w-full text-center text-white z-10 leading-[29px] "
             style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}
           >
             Grand Ballroom<br />
@@ -130,7 +130,7 @@ const Venue = () => {
         {/* Alamat venue */}
         <FadeIn delay={1.4}>
           <p
-            className="absolute w-full text-center text-white z-10 -mt-5"
+            className="absolute w-full text-center text-white z-10 "
             style={{ top: addressTop, fontFamily: "EB Garamond, serif", fontSize: 14,  }}
           >
             Jl. Diponegoro No.27, Bandung
@@ -140,7 +140,7 @@ const Venue = () => {
         {/* Sesi Holy Matrimony */}
         <FadeIn delay={1.8}>
           <p
-            className="absolute w-full text-center text-white z-10 leading-[40px] -mt-5"
+            className="absolute w-full text-center text-white z-10 leading-[40px] "
             style={{ top: holyTop, fontFamily: "Cylburn, cursive", fontSize: 48,  }}
           >
             Holy Matrimony
@@ -153,7 +153,7 @@ const Venue = () => {
         {/* Sesi Wedding Reception */}
         <FadeIn delay={2.2}>
           <p
-            className="absolute w-full text-center text-white z-10 leading-[45px] -mt-5"
+            className="absolute w-full text-red text-white z-10 leading-[45px] "
             style={{ top: receptionTop, fontFamily: "Cylburn, cursive", fontSize: 48,  }}
           >
             Wedding Reception
