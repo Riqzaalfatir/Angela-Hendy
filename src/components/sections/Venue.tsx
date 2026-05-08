@@ -28,7 +28,7 @@ const Venue = () => {
   const imageTop         = venueTop + 96 + 20;          // foto ruangan
   const grandBallroomTop = imageTop + 320;              // nama venue
   const addressTop       = grandBallroomTop + 62 + 18; // alamat
-  const holyTop          = addressTop + 20 + 68;       // Holy Matrimony
+  const holyTop          = addressTop + 20 + 68 - 18;       // Holy Matrimony
   const receptionTop     = holyTop + 74 + 30;          // Wedding Reception
   const ovalTop          = receptionTop + 74 + 63;     // foto oval pengantin
   const CANVAS_HEIGHT    = ovalTop + 460 + 60;         // total tinggi canvas
@@ -140,7 +140,7 @@ const Venue = () => {
         {/* Sesi Holy Matrimony */}
         <FadeIn delay={1.8}>
           <p
-            className="absolute w-full text-center text-black z-10 leading-[40px]"
+            className="absolute w-full text-center text-yellow-50 z-10 leading-[40px]"
             style={{ top: holyTop, fontFamily: "Cylburn, cursive", fontSize: 48,    paddingTop: 18,  // ← fix Safari iOS
   }}
           >
