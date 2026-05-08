@@ -26,7 +26,7 @@ const Venue = () => {
   // ─── Posisi vertikal elemen (px, dalam koordinat canvas 390px) ───
   const venueTop         = 65;                          // judul "Venue"
   const imageTop         = venueTop + 96 + 20;          // foto ruangan
-  const grandBallroomTop = imageTop + 330;              // nama venue
+  const grandBallroomTop = imageTop + 350;              // nama venue
   const addressTop       = grandBallroomTop + 62 + 18; // alamat
   const holyTop          = addressTop + 20 + 68;       // Holy Matrimony
   const receptionTop     = holyTop + 74 + 30;          // Wedding Reception
