@@ -187,7 +187,7 @@ useEffect(() => {
         {/* Oval countdown */}
         <div className="absolute z-10 flex justify-center gap-4" style={{ top: ovalTop, width: "100%" }}>
   {values.map((val, i) => (
-    <FadeIn key={labels[i]} delay={0.7 + i * 0.3}>
+    <FadeIn key={labels[i]} delay={0.4 + i * 0.3}>
       <div
         className="flex flex-col items-center justify-center"
         style={{ width: 60.82, height: 100, borderRadius: "50%", backgroundColor: "#FFFFFF" }}
