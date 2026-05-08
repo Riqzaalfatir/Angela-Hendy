@@ -25,7 +25,7 @@ const Venue = () => {
 
   // ─── Posisi vertikal elemen (px, dalam koordinat canvas 390px) ───
   const venueTop         = 65;                          // judul "Venue"
-const imageTop = venueTop + 96 + (scale >= 1 ? 20 : 0);
+  const imageTop         = venueTop + 96 + 20;          // foto ruangan
   const grandBallroomTop = imageTop + 320 - 18;              // nama venue
   const addressTop       = grandBallroomTop + 62 + 35; // alamat
   const holyTop          = addressTop + 20 + 68 - 18;       // Holy Matrimony
@@ -75,7 +75,7 @@ const imageTop = venueTop + 96 + (scale >= 1 ? 20 : 0);
         {/* Foto ruangan + tombol Google Maps */}
         <FadeIn delay={0.6}>
           <div
-            className="absolute bg-white z-10 mt-6"
+            className="absolute bg-white z-10 mt-0 lg:mt-0"
             style={{
               top: imageTop,
               left: (CANVAS_WIDTH - 182) / 2,
@@ -99,7 +99,7 @@ const imageTop = venueTop + 96 + (scale >= 1 ? 20 : 0);
                 href="https://maps.app.goo.gl/Su41WKmteCRACRKx5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center bg-white"
+                className="flex items-center justify-center bg-black"
                 style={{
                   width: 160,
                   height: 30,
