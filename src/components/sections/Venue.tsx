@@ -65,7 +65,7 @@ const Venue = () => {
         {/* Judul "Venue" */}
         <FadeIn delay={0.2}>
           <p
-            className="absolute w-full text-center text-white z-10 pt-2 bg-black "
+            className="absolute w-full text-center text-white z-10 pt-1"
             style={{ top: venueTop, fontFamily: "Cylburn, cursive", fontSize: 96}}
           >
             Venue
@@ -120,7 +120,7 @@ const Venue = () => {
         <FadeIn delay={1}>
           <p
             className="absolute w-full text-center text-white z-10"
-            style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38, lineHeight: "31px" }}
+            style={{ top: grandBallroomTop, fontFamily: "Cylburn, cursive", fontSize: 38 }}
           >
             Grand Ballroom<br />
             <span className="text-[30px]">Pullman Bandung Grand Central</span>
@@ -131,7 +131,7 @@ const Venue = () => {
         <FadeIn delay={1.4}>
           <p
             className="absolute w-full text-center text-white z-10"
-            style={{ top: addressTop, fontFamily: "EB Garamond, serif", fontSize: 14, lineHeight: "20px" }}
+            style={{ top: addressTop, fontFamily: "EB Garamond, serif", fontSize: 14,  }}
           >
             Jl. Diponegoro No.27, Bandung
           </p>
@@ -141,10 +141,10 @@ const Venue = () => {
         <FadeIn delay={1.8}>
           <p
             className="absolute w-full text-center text-white z-10"
-            style={{ top: holyTop, fontFamily: "Cylburn, cursive", fontSize: 48, lineHeight: "48px" }}
+            style={{ top: holyTop, fontFamily: "Cylburn, cursive", fontSize: 48,  }}
           >
             Holy Matrimony
-            <span style={{ display: "block", fontFamily: "EB Garamond, serif", fontSize: 18, lineHeight: "26px" }}>
+            <span style={{ display: "block", fontFamily: "EB Garamond, serif", fontSize: 18,  }}>
               at 11.00 AM
             </span>
           </p>
@@ -154,7 +154,7 @@ const Venue = () => {
         <FadeIn delay={2.2}>
           <p
             className="absolute w-full text-center text-white z-10"
-            style={{ top: receptionTop, fontFamily: "Cylburn, cursive", fontSize: 48, lineHeight: "48px" }}
+            style={{ top: receptionTop, fontFamily: "Cylburn, cursive", fontSize: 48,  }}
           >
             Wedding Reception
             <span style={{ display: "block", fontFamily: "EB Garamond, serif", fontSize: 18, lineHeight: "26px" }}>
