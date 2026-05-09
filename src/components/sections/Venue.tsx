@@ -62,6 +62,15 @@ const Venue = () => {
           style={{ bottom: 295, left: -6 }}
         />
 
+        {/* <Image
+  src="/images/Rsvp/BungaKananAtas.svg"
+  alt=""
+  width={335}
+  height={320}
+  className="absolute -z-10 right-0 pointer-events-none"
+  style={{ bottom: -460 }}
+/> */}
+
         {/* Judul "Venue" */}
         <FadeIn delay={0.2}>
           <p

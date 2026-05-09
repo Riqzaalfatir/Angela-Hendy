@@ -119,13 +119,13 @@ export default function WeddingGift({ open, onClose, onOpenWishes }: Props) {
             </div>
 
             {/* Judul "Thank You" */}
-            <h1 className="absolute w-full text-center text-white z-10"
+            <h1 className="absolute w-full text-center text-white z-10 pt-20"
               style={{ top: 523, fontFamily: "Cylburn, cursive", fontSize: 56, lineHeight: "56px" }}>
               Thank You
             </h1>
 
             {/* Teks penutup */}
-            <p className="absolute text-center text-white z-20"
+            <p className="absolute text-center text-white z-20 pt-20"
               style={{ top: 623, width: 283, left: "50%", transform: "translateX(-50%)",
                 fontFamily: "EB Garamond, serif", fontSize: 14, lineHeight: "22px" }}>
               For being part of our journey.<br />
