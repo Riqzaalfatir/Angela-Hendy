@@ -8,14 +8,14 @@ const DesktopCover = () => {
       className="relative w-full overflow-y-auto h-screen  no-scrollbar"
     >
       <Image
-        src="/images/Cover/Cover.webp"
+        src="/images/Cover/BgCover.webp"
         alt="Galih & Vio Wedding Cover"
         fill
         priority
-        className="object-cover object-top"
+        className="object-cover object-[50%_69%]"
       />
 
-      <div className="cover-text absolute inset-0 flex flex-col justify-end items-center text-white text-center px-10 pb-[5%] tracking-wide">
+      {/* <div className="cover-text absolute inset-0 flex flex-col justify-end items-center text-white text-center px-10 pb-[5%] tracking-wide">
 
           <p className="font-garamond text-[20px] text-white uppercase">
             The Wedding of
@@ -26,7 +26,7 @@ const DesktopCover = () => {
           <p className="font-garamond text-[20px] text-white">
             Saturday, 23 May 2026
           </p>
-      </div>
+      </div> */}
     </div>
   );
 };

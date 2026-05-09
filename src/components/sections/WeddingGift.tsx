@@ -103,7 +103,7 @@ export default function WeddingGift({ open, onClose, onOpenWishes }: Props) {
                   <p style={{ fontFamily: "EB Garamond, serif", fontSize: 12 }}>BCA</p>
                   <p style={{ fontFamily: "EB Garamond, serif", fontSize: 12 }}>8090598253</p>
                   <p style={{ fontFamily: "EB Garamond, serif", fontSize: 12 }}>
-                    a/n  Angele Tantiana / Hendy S.
+                    a/n Angele Tantiana / Hendy S.
                   </p>
                 </div>
 
